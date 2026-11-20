@@ -1,0 +1,1137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<meta name="theme-color" content="#EAF4FF">
+<title>Celine的武汉记忆路书</title>
+<style>
+:root{
+  --bg1:#EAF6FF; --bg2:#FFF4E8; --card:#ffffff;
+  --ink:#334155; --ink2:#64748b; --ink3:#94a3b8;
+  --blue:#4FACE8; --blue-d:#2E9BD4; --coral:#FF7A59; --coral-d:#F2613D;
+  --pink:#FF8FB1; --purple:#A78BFA; --mint:#4FD1A5; --yellow:#FFC93C;
+  --line:rgba(79,130,180,.14); --shadow:0 10px 30px rgba(79,140,190,.16);
+  --sans:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{height:100%}
+body{font-family:var(--sans);color:var(--ink);background:#dfeaf5;display:flex;align-items:center;justify-content:center;min-height:100vh;overflow:hidden}
+#phone{position:relative;width:430px;height:932px;max-height:100vh;background:linear-gradient(165deg,var(--bg1) 0%,#f3f9ff 45%,var(--bg2) 100%);overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.35),0 0 0 9px #fff,0 0 0 11px #d7e3f0;border-radius:44px}
+@media(max-width:480px){body{display:block;background:var(--bg1)}#phone{width:100vw;height:100vh;max-height:none;border-radius:0;box-shadow:none}}
+.statusbar{position:absolute;top:0;left:0;right:0;height:44px;z-index:55;display:flex;align-items:center;justify-content:space-between;padding:0 26px;font-size:13px;font-weight:700;color:var(--ink);pointer-events:none}
+.statusbar .sb-r{display:flex;gap:6px;align-items:center;font-size:12px}
+.battery{width:22px;height:11px;border:1.5px solid var(--ink);border-radius:3px;position:relative;padding:1.5px}
+.battery::after{content:"";position:absolute;right:-3.5px;top:3px;width:2px;height:5px;background:var(--ink);border-radius:0 2px 2px 0}
+.battery i{display:block;height:100%;width:75%;background:var(--ink);border-radius:1px}
+.notch{position:absolute;top:9px;left:50%;transform:translateX(-50%);width:120px;height:26px;background:#2b3a4a;border-radius:20px;z-index:56}
+.screen{position:absolute;inset:0;display:none;flex-direction:column;padding-top:44px}
+.screen.on{display:flex}
+.hidden{display:none!important}
+.btn{border:none;cursor:pointer;font-family:var(--sans)}
+.press{transition:transform .12s,filter .12s}
+.press:active{transform:scale(.96);filter:brightness(.98)}
+.sec-kicker{font-size:10px;letter-spacing:3px;color:var(--blue-d);font-weight:800}
+.sec-title{font-size:25px;font-weight:800;letter-spacing:.5px;margin:4px 0 3px;color:var(--ink)}
+.sec-desc{font-size:12px;color:var(--ink2);line-height:1.6}
+/* 手绘装饰云朵/星星用统一类 */
+.doodle{position:absolute;pointer-events:none}
+
+/* ============ 封面 ============ */
+#cover{align-items:center;justify-content:center;text-align:center;overflow:hidden}
+.sun{position:absolute;top:96px;right:44px;width:120px;height:120px;border-radius:50%;background:radial-gradient(circle,#FFE9A8,#FFD25E);box-shadow:0 0 0 14px rgba(255,210,94,.22)}
+.cloud{position:absolute;background:#fff;border-radius:50px;opacity:.9}
+.cloud::before,.cloud::after{content:"";position:absolute;background:#fff;border-radius:50%}
+.cloud.a{width:96px;height:28px;top:170px;left:24px}
+.cloud.a::before{width:42px;height:42px;top:-20px;left:14px}
+.cloud.a::after{width:30px;height:30px;top:-12px;left:48px}
+.cloud.b{width:70px;height:22px;top:230px;right:18px;opacity:.75}
+.cloud.b::before{width:32px;height:32px;top:-15px;left:10px}
+.star{position:absolute;color:var(--yellow);font-size:22px}
+.cover-inner{position:relative;z-index:2;width:100%;padding:0 30px}
+.cover-tag{display:inline-block;font-size:11px;letter-spacing:2px;color:var(--coral);background:#fff;border-radius:20px;padding:6px 16px;margin-bottom:16px;box-shadow:0 4px 12px rgba(255,122,89,.16);font-weight:700}
+.cover-title{font-size:46px;font-weight:900;line-height:1.12;letter-spacing:1px;color:var(--blue-d)}
+.cover-title small{display:block;font-size:20px;letter-spacing:3px;color:var(--coral);margin-top:6px;font-weight:800}
+.camera-hero{width:210px;height:180px;margin:14px auto 4px;display:block;filter:drop-shadow(0 12px 14px rgba(79,160,220,.22))}
+.cover-sub{font-size:15px;color:var(--ink2);margin:2px 0 12px;font-weight:600}
+.cover-name{display:inline-block;font-size:12px;color:var(--blue-d);background:#fff;border-radius:20px;padding:8px 18px;margin-bottom:22px;font-weight:700;box-shadow:0 4px 12px rgba(79,160,220,.12)}
+.cover-name b{color:var(--coral)}
+.start-btn{width:100%;height:58px;border-radius:20px;background:linear-gradient(135deg,var(--blue),var(--blue-d));color:#fff;font-size:17px;font-weight:800;letter-spacing:1px;box-shadow:0 8px 0 #2386bd,0 14px 24px rgba(79,172,232,.35)}
+.cover-foot{position:absolute;bottom:20px;left:0;right:0;text-align:center;font-size:10px;color:var(--ink3);letter-spacing:1.5px;z-index:2}
+
+/* ============ 主界面 ============ */
+#main{}
+.appbar{padding:10px 20px 12px;display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
+.appbar .brand{display:flex;align-items:center;gap:9px}
+.appbar .brand .mini-cam{width:32px;height:32px}
+.appbar h1{font-size:18px;font-weight:900;color:var(--blue-d)}
+.appbar .date{font-size:10px;color:var(--ink3);text-align:right;line-height:1.5;font-weight:600}
+.appbar .date b{color:var(--coral);font-size:12px}
+.viewport{flex:1;overflow-y:auto;overflow-x:hidden;padding:0 0 92px;scrollbar-width:none}
+.viewport::-webkit-scrollbar{display:none}
+.view{display:none;animation:fadein .35s ease}
+.view.on{display:block}
+@keyframes fadein{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.tabbar{position:absolute;bottom:0;left:0;right:0;height:84px;z-index:40;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-top:1px solid var(--line);display:flex;padding:9px 6px 20px;border-radius:24px 24px 0 0}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:var(--ink3);font-size:11px;font-weight:700;position:relative;cursor:pointer}
+.tab svg{width:26px;height:26px;stroke:var(--ink3);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.tab.on{color:var(--blue-d)}.tab.on svg{stroke:var(--blue-d)}
+.tab.on .tab-ic{background:#E4F3FF}
+.tab-ic{width:40px;height:30px;border-radius:12px;display:flex;align-items:center;justify-content:center;transition:.2s}
+.tab .badge{position:absolute;top:-2px;right:16px;background:var(--coral);color:#fff;font-size:9px;border-radius:9px;padding:1px 5px;min-width:16px}
+
+/* ============ Tab1 记忆时间轴 ============ */
+.tl-head,.map-head{padding:14px 22px 4px}
+.day-tabs{display:flex;gap:8px;padding:10px 22px 12px}
+.day-chip{flex:1;min-width:0;border:none;background:#fff;border-radius:16px;padding:9px 6px;cursor:pointer;transition:.2s;text-align:center;box-shadow:0 4px 12px rgba(79,140,190,.08)}
+.day-chip.on{background:linear-gradient(135deg,var(--blue),var(--blue-d));color:#fff;box-shadow:0 6px 16px rgba(79,172,232,.35)}
+.day-chip b{font-size:12px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-weight:800}
+.day-chip span{font-size:9px;opacity:.75}
+.day-banner{margin:0 22px 14px;border-radius:22px;padding:18px 20px;color:#fff;position:relative;overflow:hidden;box-shadow:var(--shadow)}
+.day-banner.d0{background:linear-gradient(120deg,#5AC8FA,#4FACFE)}
+.day-banner.d1{background:linear-gradient(120deg,#FF8FB1,#FF7A59)}
+.day-banner.d2{background:linear-gradient(120deg,#A78BFA,#7C6BF0)}
+.day-banner::before{content:"";position:absolute;right:-16px;top:-24px;width:110px;height:110px;background:rgba(255,255,255,.16);border-radius:50%}
+.day-banner::after{content:"✦";position:absolute;right:26px;bottom:10px;font-size:26px;color:rgba(255,255,255,.5)}
+.day-banner h3{font-size:19px;font-weight:900;position:relative}
+.day-banner p{font-size:11px;opacity:.92;margin-top:5px;position:relative;line-height:1.6}
+.timeline{position:relative;padding:4px 22px 20px}
+.timeline::before{content:"";position:absolute;left:42px;top:18px;bottom:30px;width:3px;background:repeating-linear-gradient(180deg,#BFE3FA 0 8px,transparent 8px 16px);border-radius:3px}
+.tl-item{position:relative;padding-left:46px;margin-bottom:18px;animation:fadein .5s ease both}
+.tl-dot{position:absolute;left:32px;top:16px;width:22px;height:22px;border-radius:50%;background:#fff;border:3px solid var(--blue);display:flex;align-items:center;justify-content:center;z-index:2;box-shadow:0 2px 8px rgba(79,172,232,.3)}
+.tl-time{font-size:12px;color:var(--blue-d);font-weight:800;margin-bottom:7px;display:flex;align-items:center;gap:8px}
+.pick-box{width:18px;height:18px;border:2px solid #cbd5e1;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-size:11px;color:transparent;cursor:pointer;background:#fff}
+.pick-box.on{background:var(--mint);border-color:var(--mint);color:#fff}
+.tl-card{background:var(--card);border-radius:20px;overflow:hidden;box-shadow:0 6px 18px rgba(79,140,190,.1);cursor:pointer;transition:transform .15s}
+.tl-card:active{transform:scale(.98)}
+.tl-card .thumb{height:152px;position:relative;overflow:hidden;background:#dbeafe}
+.tl-card .thumb img,.detail-hero img{width:100%;height:100%;object-fit:cover;display:block}
+.tl-card .thumb svg{width:100%;height:100%;display:block}
+.thumb .idx{position:absolute;top:10px;left:10px;font-size:10px;color:#fff;background:rgba(51,65,85,.6);padding:3px 10px;border-radius:12px;font-weight:700}
+.thumb .stamp{position:absolute;bottom:10px;right:12px;color:#fff;font-weight:800;font-size:12px;text-shadow:0 1px 4px rgba(0,0,0,.5)}
+.thumb .visited-mark{position:absolute;bottom:10px;left:10px;font-size:10px;color:#fff;background:var(--coral);padding:4px 10px;border-radius:12px;font-weight:700}
+.tl-card .info{padding:13px 15px 15px}
+.tl-card .info h3{font-size:18px;display:flex;align-items:center;gap:7px;font-weight:800}
+.tl-card .info h3 .tag{font-size:9px;font-weight:700;color:var(--blue-d);background:#E4F3FF;border-radius:8px;padding:3px 8px}
+.tl-card .info p{font-size:12px;color:var(--ink2);line-height:1.6;margin-top:6px}
+.tl-card .info .more{font-size:11px;color:var(--coral);font-weight:800;margin-top:8px}
+.tl-end{text-align:center;font-size:12px;color:var(--ink3);padding:12px 0 4px;font-weight:600}
+
+/* ============ Tab2 我的路书 ============ */
+.user-card{margin:6px 20px 0;border-radius:24px;padding:18px 18px 16px;background:linear-gradient(120deg,#FFB1C8,#FF8FB1);color:#fff;position:relative;overflow:hidden;box-shadow:0 10px 24px rgba(255,143,177,.3)}
+.user-card-top{display:flex;align-items:center;gap:13px;position:relative;z-index:2}
+.user-card::after{content:"✦";position:absolute;right:20px;top:12px;font-size:22px;color:rgba(255,255,255,.5)}
+.avatar{width:62px;height:62px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;font-size:36px;flex-shrink:0;border:3px solid rgba(255,255,255,.6);box-shadow:0 4px 12px rgba(0,0,0,.1)}
+.user-info h2{font-size:21px;font-weight:900}
+.user-info p{font-size:11px;opacity:.9;margin-top:3px}
+.user-actions{display:flex;gap:9px;margin-top:14px;position:relative;z-index:2}
+.ua-btn{flex:1;background:rgba(255,255,255,.26);border-radius:14px;padding:9px 2px;text-align:center;cursor:pointer;transition:.15s}
+.ua-btn:active{transform:scale(.94)}
+.ua-ic{font-size:19px;display:block;margin-bottom:2px}
+.ua-t{font-size:10px;font-weight:800;opacity:.95;display:block}
+.ua-shoot{background:linear-gradient(135deg,#FF9F7A,#F2613D);box-shadow:0 4px 12px rgba(242,97,61,.4)}
+.hist-collage{width:100%;height:100%;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:2px;background:#fff}
+.hist-collage img{width:100%;height:100%;object-fit:cover}
+.hc-empty{display:flex;align-items:center;justify-content:center;font-size:26px;background:#EAF6FF}
+.myphoto-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding:14px 20px}
+.mp-big{position:relative;border-radius:12px;overflow:hidden;aspect-ratio:1;background:#dbeafe}
+.mp-big img{width:100%;height:100%;object-fit:cover;display:block}
+.mp-big .del{position:absolute;top:4px;right:4px;width:20px;height:20px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.plan-group{background:#fff;border-radius:16px;padding:13px;cursor:pointer;box-shadow:0 4px 12px rgba(79,140,190,.08)}
+.plan-rt{font-size:14px;font-weight:800;display:flex;align-items:center;gap:5px}
+.plan-n{margin-left:auto;font-size:10px;color:var(--coral);background:#FFF0EC;border-radius:9px;padding:2px 8px;font-weight:700}
+.plan-spots{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+.plan-chip{font-size:11px;color:#334155;background:#F1F7FD;border-radius:11px;padding:5px 10px;font-weight:600}
+/* 权限弹窗 */
+.perm-dialog{background:#fff;border-radius:24px;margin:36px 24px 20px;padding:30px 24px 24px;text-align:center;box-shadow:var(--shadow)}
+.perm-ic{width:76px;height:76px;border-radius:24px;background:linear-gradient(135deg,#4FACE8,#2E9BD4);display:flex;align-items:center;justify-content:center;font-size:38px;margin:0 auto 18px;box-shadow:0 8px 20px rgba(79,172,232,.35)}
+.perm-dialog h3{font-size:19px;font-weight:900;margin-bottom:10px}
+.perm-dialog p{font-size:12px;color:var(--ink2);line-height:1.8;margin-bottom:22px}
+.perm-btns{display:flex;gap:10px}
+.perm-btns button{flex:1;height:44px;border-radius:13px;font-size:14px;font-weight:800;cursor:pointer}
+.perm-no{background:#F1F5F9;color:var(--ink2);border:none}
+.perm-yes{background:linear-gradient(135deg,var(--blue),var(--blue-d));color:#fff;border:none}
+.perm-note{font-size:10px;color:var(--ink3);margin-top:16px}
+/* 下一站计划列表 */
+.plan-sec-t{font-size:12px;font-weight:800;color:var(--blue-d);padding:16px 22px 8px}
+.plan-list{padding:0 20px;display:flex;flex-direction:column;gap:8px}
+.plan-row{display:flex;align-items:center;gap:11px;background:#fff;border-radius:14px;padding:9px 11px;box-shadow:0 3px 10px rgba(79,140,190,.07)}
+.plan-row.on{background:#F0FAF6}
+.plan-row img{width:52px;height:52px;border-radius:10px;object-fit:cover;flex-shrink:0}
+.pr-info{flex:1;min-width:0}
+.pr-info b{font-size:13px;font-weight:800;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.pr-info span{font-size:10px;color:var(--ink3);display:block;margin-top:3px}
+.pr-btn{width:34px;height:34px;border-radius:11px;border:none;font-size:20px;font-weight:700;cursor:pointer;flex-shrink:0;display:flex;align-items:center;justify-content:center}
+.pr-btn.plus{background:#E4F3FF;color:var(--blue-d)}
+.pr-btn.minus{background:#FFE8E4;color:var(--coral)}
+/* 照片名称标签 */
+.mp-name{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(0,0,0,.6));color:#fff;font-size:10px;font-weight:700;padding:14px 6px 5px;text-align:center}
+
+/* ============ 图文并茂杂志海报 ============ */
+.dom-poster{background:#fff;border-radius:0;overflow:hidden}
+.mag{font-family:var(--sans);color:#334155}
+.mag-hero{position:relative;height:330px;background-size:cover;background-position:center;overflow:hidden}
+.mag-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,35,55,.15) 0%,rgba(20,35,55,.15) 40%,rgba(20,35,55,.85) 100%)}
+.mag-brand{position:absolute;top:20px;left:20px;z-index:2;color:#fff;font-size:10px;font-weight:800;letter-spacing:2px;text-shadow:0 1px 4px rgba(0,0,0,.4)}
+.mag-seal{position:absolute;top:16px;right:18px;z-index:2;width:56px;height:56px;border:2.5px solid #FF8FB1;border-radius:10px;color:#FF8FB1;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;line-height:1.25;text-align:center;transform:rotate(9deg);background:rgba(255,255,255,.12)}
+.mag-hero-text{position:absolute;left:22px;right:22px;bottom:24px;z-index:2;color:#fff}
+.mag-hero-text .en{font-size:10px;letter-spacing:3px;opacity:.85;font-weight:700;margin-bottom:6px}
+.mag-hero-text h1{font-size:32px;font-weight:900;line-height:1.15;letter-spacing:1px;text-shadow:0 2px 12px rgba(0,0,0,.4)}
+.mag-hero-text .date{font-size:11px;opacity:.9;margin-top:8px;letter-spacing:1px}
+.mag-stats{display:flex;background:#fff;padding:14px 0;border-bottom:1px solid #EEF4FA}
+.mag-stats div{flex:1;text-align:center;border-right:1px solid #EEF4FA}
+.mag-stats div:last-child{border:none}
+.mag-stats b{display:block;font-size:22px;font-weight:900;color:#2E9BD4;line-height:1}
+.mag-stats span{font-size:9px;color:#94a3b8;letter-spacing:1px}
+.mag-body{padding:18px 20px 22px;background:linear-gradient(180deg,#fff,#FFF9F2)}
+.mag-kicker{font-size:10px;color:#FF7A59;font-weight:900;letter-spacing:2px;margin-bottom:12px;display:flex;align-items:center;gap:6px}
+.mag-kicker::after{content:"";flex:1;height:1px;background:#FFE0D8}
+.mag-collage{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,96px);gap:8px}
+.mag-photo{position:relative;border-radius:12px;overflow:hidden;background:#dbeafe}
+.mag-photo.big{grid-row:span 2}
+.mag-photo img{width:100%;height:100%;object-fit:cover;display:block}
+.mag-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 55%,rgba(0,0,0,.65))}
+.mag-photo .cap{position:absolute;left:9px;right:9px;bottom:7px;z-index:2;color:#fff}
+.mag-photo .cap b{font-size:11px;font-weight:800;display:block;text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.mag-photo .cap span{font-size:9px;opacity:.85}
+.mag-photo .num{position:absolute;top:7px;right:8px;z-index:2;width:22px;height:22px;border-radius:50%;background:rgba(255,255,255,.9);color:#FF7A59;font-size:10px;font-weight:900;display:flex;align-items:center;justify-content:center}
+.mag-quote{margin:18px 0 0;background:#FFF6E2;border-left:4px solid #FFC93C;border-radius:0 12px 12px 0;padding:14px 16px;position:relative}
+.mag-quote::before{content:"“";position:absolute;left:8px;top:-8px;font-size:38px;color:#FFD873;opacity:.6;font-family:Georgia,serif}
+.mag-quote p{font-size:12px;line-height:1.85;color:#8a6a3a;position:relative}
+.mag-footer{display:flex;align-items:center;justify-content:space-between;padding:14px 20px 18px;background:#2E9BD4;color:#fff}
+.mag-footer .loc{font-size:13px;font-weight:900}
+.mag-footer .mark{font-size:9px;opacity:.85;text-align:right;line-height:1.5}
+.blk-title{padding:20px 22px 8px;display:flex;align-items:center;gap:7px}
+.blk-title h3{font-size:18px;font-weight:900}
+.blk-title .em{font-size:19px}
+.make-entry{margin:0 20px;background:var(--card);border-radius:22px;padding:18px;display:flex;align-items:center;gap:14px;cursor:pointer;box-shadow:var(--shadow);position:relative;overflow:hidden;border:2px solid #fff}
+.make-entry::after{content:"";position:absolute;right:-20px;bottom:-20px;width:90px;height:90px;background:radial-gradient(circle,#FFF0D6,transparent 70%);border-radius:50%}
+.make-ic{width:56px;height:56px;border-radius:18px;background:linear-gradient(135deg,#FFD25E,#FFC93C);display:flex;align-items:center;justify-content:center;font-size:28px;flex-shrink:0;box-shadow:0 6px 14px rgba(255,201,60,.35)}
+.make-txt{flex:1;position:relative;z-index:2}
+.make-txt b{font-size:16px;font-weight:900;display:block}
+.make-txt span{font-size:11px;color:var(--ink2);display:block;margin-top:3px}
+.make-go{width:30px;height:30px;border-radius:50%;background:#E4F3FF;color:var(--blue-d);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;position:relative;z-index:2}
+.hist-list{margin:0 20px;display:flex;flex-direction:column;gap:10px}
+.hist-card{background:var(--card);border-radius:18px;padding:11px;display:flex;align-items:center;gap:12px;cursor:pointer;box-shadow:0 5px 16px rgba(79,140,190,.09);border:1px solid #fff}
+.hist-thumb{width:66px;height:78px;border-radius:12px;overflow:hidden;flex-shrink:0;background:#dbeafe}
+.hist-thumb canvas{width:100%;height:100%;display:block;object-fit:cover}
+.hist-info{flex:1;min-width:0}
+.hist-info b{font-size:14px;font-weight:800;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hist-info span{font-size:10px;color:var(--ink3);display:block;margin-top:4px}
+.hist-info .htag{display:inline-block;font-size:9px;color:var(--mint);background:#E4F8F1;border-radius:8px;padding:2px 7px;margin-top:6px;font-weight:700}
+.hist-empty{text-align:center;color:var(--ink3);font-size:12px;padding:26px 20px;background:#fff;border-radius:18px;margin:0 20px;line-height:1.7}
+
+/* ============ Tab3 足迹地图 ============ */
+.route-list{padding:10px 20px 0;display:flex;flex-direction:column;gap:11px}
+.route-card{background:var(--card);border-radius:18px;padding:14px;display:flex;align-items:center;gap:12px;cursor:pointer;box-shadow:0 5px 16px rgba(79,140,190,.09);border:1px solid #fff;transition:transform .15s}
+.route-card:active{transform:scale(.98)}
+.route-ic{width:50px;height:50px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:26px;flex-shrink:0;background:var(--rbg)}
+.route-info{flex:1;min-width:0}
+.route-info h3{font-size:17px;font-weight:800;display:flex;align-items:center;gap:6px}
+.route-info h3 .cnt{font-size:9px;color:var(--coral);background:#FFF0EC;border-radius:8px;padding:2px 7px;font-weight:700}
+.route-info p{font-size:11px;color:var(--ink3);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.route-go{color:var(--ink3);font-size:20px;flex-shrink:0}
+.map-detail-head{padding:14px 20px 8px;display:flex;align-items:center;gap:10px}
+.map-detail-head .back{width:32px;height:32px;border-radius:12px;background:#fff;color:var(--blue-d);font-size:18px;display:flex;align-items:center;justify-content:center;cursor:pointer;flex-shrink:0;box-shadow:0 3px 10px rgba(79,140,190,.12)}
+.map-detail-head h2{font-size:21px;font-weight:900}
+.map-legend{display:flex;gap:16px;font-size:10px;color:var(--ink2);padding:8px 20px 0;align-items:center;font-weight:600}
+.map-legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;vertical-align:-1px}
+.map-canvas{margin:10px 18px 0;height:370px;border-radius:20px;overflow:hidden;border:3px solid #fff;box-shadow:var(--shadow);background:#e9dcc0}
+.map-canvas svg{width:100%;height:100%;display:block}
+.route-spots{padding:14px 20px 20px;display:flex;flex-direction:column;gap:9px}
+.spot-row{background:var(--card);border-radius:16px;padding:12px;display:flex;align-items:center;gap:11px;cursor:pointer;box-shadow:0 4px 12px rgba(79,140,190,.08)}
+.spot-dot{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:13px;font-weight:800;flex-shrink:0}
+.spot-info{flex:1;min-width:0}
+.spot-info h4{font-size:15px;font-weight:800}
+.spot-info p{font-size:10px;color:var(--ink3);margin-top:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.spot-status{flex-shrink:0;font-size:10px;padding:4px 10px;border-radius:11px;font-weight:700}
+.spot-status.done{background:#E4F8F1;color:var(--mint)}
+.spot-status.todo{background:#F1F5F9;color:var(--ink3)}
+
+/* ============ 弹层 ============ */
+.overlay{position:absolute;inset:0;z-index:50;background:rgba(45,60,80,.5);display:flex;align-items:flex-end;opacity:0;pointer-events:none;transition:opacity .28s}
+.overlay.on{opacity:1;pointer-events:auto}
+.sheet{width:100%;max-height:93%;background:linear-gradient(165deg,var(--bg1),#fff 40%,var(--bg2));border-radius:28px 28px 0 0;overflow-y:auto;padding-bottom:26px;transform:translateY(100%);transition:transform .34s cubic-bezier(.2,.8,.2,1);scrollbar-width:none}
+.overlay.on .sheet{transform:none}
+.sheet::-webkit-scrollbar{display:none}
+.sheet-grab{width:42px;height:4px;background:#cbd5e1;border-radius:3px;margin:10px auto 4px}
+.sheet-close{position:absolute;top:14px;right:16px;width:32px;height:32px;border-radius:50%;background:rgba(51,65,85,.55);color:#fff;font-size:18px;display:flex;align-items:center;justify-content:center;z-index:3}
+.detail-hero{height:260px;position:relative;overflow:hidden;background:#dbeafe}
+.detail-hero .back{position:absolute;top:16px;left:16px;width:36px;height:36px;border-radius:50%;background:rgba(51,65,85,.45);color:#fff;font-size:20px;display:flex;align-items:center;justify-content:center;z-index:2}
+.detail-body{padding:18px 22px 0}
+.detail-title{font-size:26px;font-weight:900;display:flex;align-items:center;gap:9px}
+.detail-title .chip{font-size:10px;color:#fff;background:var(--coral);border-radius:12px;padding:4px 11px;font-weight:700}
+.detail-meta{font-size:11px;color:var(--ink3);margin:8px 0 14px;font-weight:600}
+.tts-box{background:#fff;border-radius:18px;padding:16px;margin-bottom:14px;box-shadow:0 5px 16px rgba(79,140,190,.08)}
+.tts-top{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.tts-play{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--coral),var(--coral-d));color:#fff;font-size:15px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.tts-play.playing{animation:pulse 1s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(255,122,89,.5)}50%{box-shadow:0 0 0 10px rgba(255,122,89,0)}}
+.tts-top b{font-size:13px;font-weight:800}.tts-top span{font-size:10px;color:var(--ink3)}
+.waveform{display:flex;align-items:center;gap:3px;height:22px;margin-left:auto}
+.waveform i{width:3px;background:var(--yellow);border-radius:2px;height:5px;transition:height .15s}
+.tts-text{font-size:15px;line-height:1.85;color:var(--ink);margin-top:10px}
+.kid-note{background:#FFF6E7;border-radius:14px;padding:14px 16px;font-size:12px;line-height:1.7;color:#8a6a3a;border:1px dashed var(--yellow)}
+.kid-note b{color:var(--coral);font-weight:800}
+.detail-section-t{font-size:11px;letter-spacing:2px;color:var(--mint);font-weight:800;margin:16px 0 8px}
+/* 制作路书 maker */
+.maker-head{padding:16px 22px 6px}
+.maker-title-input{width:calc(100% - 44px);margin:6px 22px 0;font-size:20px;font-weight:900;color:var(--ink);background:#fff;border:2px solid transparent;border-radius:14px;padding:12px 14px;outline:none}
+.maker-title-input:focus{border-color:var(--blue)}
+.maker-sect{padding:18px 22px 6px}
+.maker-sect h4{font-size:14px;font-weight:800;display:flex;align-items:center;gap:6px}
+.maker-sect .hint{font-size:10px;color:var(--ink3);margin-top:3px}
+.pick-days{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+.pick-day{background:#fff;border-radius:16px;padding:12px;box-shadow:0 4px 12px rgba(79,140,190,.07)}
+.pick-day-t{font-size:12px;font-weight:800;color:var(--blue-d);margin-bottom:8px}
+.pick-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.pick-spot{display:flex;align-items:center;gap:7px;background:#f6faff;border-radius:12px;padding:8px;cursor:pointer;border:2px solid transparent}
+.pick-spot.on{background:#E4F8F1;border-color:var(--mint)}
+.pick-spot img{width:34px;height:34px;border-radius:9px;object-fit:cover;flex-shrink:0}
+.pick-spot span{font-size:11px;font-weight:700;line-height:1.3;flex:1}
+.pick-spot .ck{width:17px;height:17px;border-radius:5px;border:2px solid #cbd5e1;display:flex;align-items:center;justify-content:center;font-size:10px;color:transparent;flex-shrink:0}
+.pick-spot.on .ck{background:var(--mint);border-color:var(--mint);color:#fff}
+.maker-actions{display:flex;gap:9px;margin:16px 22px 0;flex-wrap:wrap}
+.maker-actions button{flex:1;min-width:42%;height:48px;border-radius:14px;font-size:13px;font-weight:800;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:5px}
+.ma-photo{background:#fff;color:var(--blue-d);border:2px solid #DCEEFF}
+.ma-ai{background:#fff;color:var(--purple);border:2px solid #EDE7FF}
+.ma-note{background:var(--card);color:var(--ink);border:1px solid var(--line)}
+.ma-gen{background:linear-gradient(135deg,var(--coral),var(--coral-d));color:#fff;box-shadow:0 6px 14px rgba(255,122,89,.3)}
+.maker-photos{display:flex;gap:8px;flex-wrap:wrap;padding:6px 22px}
+.mp-item{position:relative;width:66px;height:66px;border-radius:12px;overflow:hidden;box-shadow:0 3px 10px rgba(79,140,190,.15)}
+.mp-item img{width:100%;height:100%;object-fit:cover;display:block}
+.mp-item .del{position:absolute;top:2px;right:2px;width:18px;height:18px;border-radius:50%;background:rgba(0,0,0,.55);color:#fff;font-size:11px;display:flex;align-items:center;justify-content:center;cursor:pointer}
+.maker-note{width:calc(100% - 44px);margin:8px 22px 0;min-height:64px;border:2px solid transparent;border-radius:14px;padding:12px;font-family:var(--sans);font-size:13px;line-height:1.6;color:var(--ink);background:#fff;outline:none;resize:vertical}
+.maker-note:focus{border-color:var(--blue)}
+/* 游记 */
+.travel-doc{margin:0 20px;background:#fff;border-radius:20px;padding:20px;box-shadow:var(--shadow)}
+.travel-doc h3{font-size:21px;font-weight:900;text-align:center;margin-bottom:4px;color:var(--coral)}
+.travel-doc .byline{text-align:center;font-size:10px;color:var(--ink3);margin-bottom:14px}
+.travel-doc .para{font-size:14px;line-height:1.9;color:var(--ink);text-indent:2em;margin-bottom:10px}
+.topics{display:flex;flex-wrap:wrap;gap:7px;margin-top:12px}
+.topics span{font-size:10px;color:var(--blue-d);background:#E4F3FF;padding:4px 10px;border-radius:12px;font-weight:700}
+.save-bar{display:flex;gap:10px;margin:14px 20px 0}
+.save-bar button{flex:1;height:46px;border-radius:14px;font-size:13px;font-weight:800;cursor:pointer}
+.save-main{background:linear-gradient(135deg,var(--coral),var(--coral-d));color:#fff}
+.save-sub{background:#fff;color:var(--ink);border:1px solid var(--line)}
+/* 海报 */
+.poster-big{margin:8px 20px 0;border-radius:18px;overflow:hidden;box-shadow:var(--shadow);background:#fff}
+#posterBig,#histPosterBig{width:100%;display:block}
+/* 照片编辑器 */
+.editor-stage{width:100%;height:270px;border-radius:18px;overflow:hidden;background:#eef4fb;display:flex;align-items:center;justify-content:center}
+.editor-stage img{max-width:100%;max-height:100%;transition:transform .2s,filter .2s}
+.editor-tools{display:flex;gap:7px;margin-top:12px;overflow-x:auto;padding-bottom:4px}
+.editor-tools button{flex-shrink:0;padding:9px 12px;border-radius:12px;border:1px solid var(--line);background:#fff;font-size:12px;font-weight:700;cursor:pointer}
+.editor-save{width:100%;height:46px;border-radius:14px;background:linear-gradient(135deg,var(--blue),var(--blue-d));color:#fff;font-size:14px;font-weight:800;margin-top:12px;cursor:pointer}
+#toast{position:absolute;left:50%;bottom:110px;transform:translate(-50%,20px);z-index:90;background:rgba(51,65,85,.94);color:#fff;padding:12px 22px;border-radius:24px;font-size:13px;font-weight:600;opacity:0;pointer-events:none;transition:.3s;white-space:nowrap}
+#toast.on{opacity:1;transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+<div id="phone">
+  <div class="notch"></div>
+  <div class="statusbar"><span>9:41</span><span class="sb-r">●●● <svg width="16" height="11" viewBox="0 0 16 11"><path d="M1 8h2v3H1zM5 6h2v5H5zM9 3h2v8H9zM13 1h2v10h-2z" fill="#334155"/></svg> <span class="battery"><i></i></span></span></div>
+
+  <!-- 封面 -->
+  <section id="cover" class="screen on">
+    <div class="sun"></div>
+    <div class="cloud a"></div><div class="cloud b"></div>
+    <span class="star" style="top:150px;right:60px">✦</span>
+    <span class="star" style="top:300px;left:46px;font-size:16px">✦</span>
+    <div class="cover-inner">
+      <span class="cover-tag">✈️ AI 文旅 · 独家记忆</span>
+      <div class="cover-title">武汉记忆相机<small>你的专属路书</small></div>
+      <svg class="camera-hero" viewBox="0 0 210 180">
+        <ellipse cx="105" cy="158" rx="70" ry="10" fill="rgba(79,160,220,.15)"/>
+        <path d="M66 62l-7-16h30l6 14z" fill="#F2613D"/>
+        <rect x="34" y="58" width="142" height="90" rx="24" fill="#fff" stroke="#4FACE8" stroke-width="4"/>
+        <rect x="34" y="58" width="142" height="26" rx="18" fill="#4FACE8"/>
+        <circle cx="105" cy="108" r="33" fill="#4FACE8"/><circle cx="105" cy="108" r="25" fill="#EAF6FF" stroke="#fff" stroke-width="3"/>
+        <circle cx="105" cy="108" r="15" fill="#2E9BD4"/><circle cx="96" cy="99" r="6" fill="rgba(255,255,255,.7)"/>
+        <rect x="140" y="68" width="22" height="8" rx="4" fill="#FFC93C"/>
+        <circle cx="55" cy="72" r="5" fill="#FF8FB1"/>
+        <path d="M88 76q6 6 12 0M112 76q6 6 12 0" stroke="#fff" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+        <path d="M46 148l-8 20M164 148l8 20" stroke="#2E9BD4" stroke-width="4" stroke-linecap="round"/>
+      </svg>
+      <div class="cover-sub">按下快门，听见武汉的百年回响 🎶</div>
+      <div class="cover-name">探索者 <b>Celine</b> · 10月3日-5日 · 武汉</div>
+      <button class="start-btn btn press" onclick="enterMain()">开 启 我 的 路 书 →</button>
+    </div>
+    <div class="cover-foot">WUHAN MEMORY CAMERA · MADE WITH ♥</div>
+  </section>
+
+  <!-- 主界面 -->
+  <section id="main" class="screen">
+    <div class="appbar">
+      <div class="brand"><svg class="mini-cam" viewBox="0 0 32 32"><rect x="2" y="8" width="28" height="20" rx="7" fill="#4FACE8"/><rect x="2" y="8" width="28" height="7" rx="4" fill="#2E9BD4"/><circle cx="16" cy="19" r="7" fill="#fff"/><circle cx="16" cy="19" r="3" fill="#2E9BD4"/></svg><h1>Celine 的武汉路书</h1></div>
+      <div class="date"><b>10月3日-5日</b><br>晴 · 三日探索</div>
+    </div>
+    <div class="viewport" id="viewport">
+      <!-- Tab1 记忆时间轴 -->
+      <div class="view on" id="view-timeline">
+        <div class="tl-head"><div class="sec-kicker">MEMORY TIMELINE</div><div class="sec-title">我的武汉记忆 📖</div><div class="sec-desc">按日期排列，以天为单位，收藏每一次快门的故事。</div></div>
+        <div class="day-tabs" id="dayTabs"></div>
+        <div id="dayContent"></div>
+      </div>
+      <!-- Tab2 我的路书 -->
+      <div class="view" id="view-book">
+        <div class="user-card">
+          <div class="user-card-top">
+            <div class="avatar">👧🏻</div>
+            <div class="user-info"><h2>Hi, Celine! ✨</h2><p>记录我在武汉的每一个小发现</p></div>
+          </div>
+          <div class="user-actions">
+            <div class="ua-btn ua-shoot press" onclick="shootPhoto()"><span class="ua-ic">📷</span><span class="ua-t">拍摄</span></div>
+            <div class="ua-btn press" onclick="showMyPhotos()"><span class="ua-ic">🌆</span><span class="ua-t">我的照片</span></div>
+            <div class="ua-btn press" onclick="showNextPlans()"><span class="ua-ic">🧭</span><span class="ua-t">下一站计划</span></div>
+          </div>
+        </div>
+        <div class="blk-title"><span class="em">🎨</span><h3>制作我的路书</h3></div>
+        <div class="make-entry press" onclick="openMaker()">
+          <div class="make-ic">✏️</div>
+          <div class="make-txt"><b>开始制作专属路书</b><span>勾选去过的地标 · 添加照片 · AI 一键成文</span></div>
+          <div class="make-go">›</div>
+        </div>
+        <div class="blk-title"><span class="em">🗂️</span><h3>我的历史路书</h3></div>
+        <div class="hist-list" id="histList"></div>
+      </div>
+      <!-- Tab3 足迹地图 -->
+      <div class="view" id="view-map">
+        <div id="mapList">
+          <div class="map-head"><div class="sec-kicker">WELCOME TO WUHAN</div><div class="sec-title">武汉欢迎你 🗺️</div><div class="sec-desc">这里有好多条武汉路线，点开看看你去过哪些地方。</div></div>
+          <div class="route-list" id="routeList"></div>
+        </div>
+        <div id="mapDetail" class="hidden">
+          <div class="map-detail-head"><div class="back" onclick="closeRoute()">←</div><h2 id="routeTitle">路线地图</h2></div>
+          <div class="map-legend"><span><i style="background:var(--coral)"></i>已打卡</span><span><i style="background:#b9ab8e"></i>欢迎你来</span></div>
+          <div class="map-canvas"><svg id="routeMapSvg" viewBox="0 0 400 400" preserveAspectRatio="xMidYMid slice"></svg></div>
+          <div class="route-spots" id="routeSpots"></div>
+        </div>
+      </div>
+    </div>
+    <nav class="tabbar">
+      <div class="tab on" data-v="timeline" onclick="switchTab('timeline')"><div class="tab-ic"><svg viewBox="0 0 26 26"><circle cx="6" cy="6" r="2.5"/><circle cx="6" cy="20" r="2.5"/><path d="M6 8.5v9M12 6h11M12 20h11M12 13h8"/></svg></div><span>记忆时间轴</span></div>
+      <div class="tab" data-v="book" onclick="switchTab('book')"><div class="tab-ic"><svg viewBox="0 0 26 26"><path d="M5 3h12l4 4v16H5z" stroke-linejoin="round"/><path d="M9 11h8M9 15h8M9 19h5"/></svg></div><span>我的路书</span></div>
+      <div class="tab" data-v="map" onclick="switchTab('map')"><div class="tab-ic"><svg viewBox="0 0 26 26"><path d="M3 6l6-3 8 3 6-3v17l-6 3-8-3-6 3z" stroke-linejoin="round"/><path d="M9 3v17M17 6v17"/></svg></div><span>足迹地图</span></div>
+    </nav>
+  </section>
+
+  <!-- 弹层 -->
+  <div class="overlay" id="ov-detail"><div class="sheet" id="sheet-detail"></div></div>
+  <div class="overlay" id="ov-spot"><div class="sheet" id="sheet-spot"></div></div>
+  <div class="overlay" id="ov-photos"><div class="sheet" id="sheet-photos"></div></div>
+  <div class="overlay" id="ov-maker"><div class="sheet" id="sheet-maker"></div></div>
+  <div class="overlay" id="ov-travel"><div class="sheet" id="sheet-travel"></div></div>
+  <div class="overlay" id="ov-poster"><div class="sheet" id="sheet-poster"></div></div>
+  <div class="overlay" id="ov-histposter"><div class="sheet" id="sheet-histposter"></div></div>
+  <div id="toast"></div>
+</div>
+<script>
+/* ==== 数据 ==== */
+const IMG='images/';
+const DAYS=[
+  {
+    id:'d0', date:'10月3日 周六', label:'Day1 初识江城', theme:'江城四大地标 · 一日打卡',
+    desc:'第一天，Celine 用相机认识了武汉最经典的四个地标：黄鹤楼、长江一桥、龟山电视塔、武汉关。',
+    weather:'晴 22℃', cls:'d0',
+    records:[
+      {id:'d0-1',name:'黄鹤楼',time:'08:30',tag:'江南三大名楼',x:322,y:100,img:IMG+'real_huanghelou.jpg',stamp:'千古 · 名楼',
+       ai:'黄鹤楼始建于三国时代，距今已有1700多年啦！传说仙人曾骑黄鹤经过这里，所以叫"黄鹤楼"。唐代诗人崔颢在这里写下千古名诗《黄鹤楼》，连大诗人李白来到这儿都感叹写不出更好的句子呢！',
+       kid:'我数了数，黄鹤楼有五层，飞檐翘角像要飞起来，站在楼上能看到长江！'},
+      {id:'d0-2',name:'长江一桥',time:'10:20',tag:'万里长江第一桥',x:200,y:255,img:IMG+'real_changjiang_bridge.jpg',stamp:'天堑 · 通途',
+       ai:'这就是著名的武汉长江大桥，1957年通车，是新中国在长江上修的第一座大桥！毛主席写过"一桥飞架南北，天堑变通途"来夸它。桥有两层，上面跑汽车，下面走火车，是武汉人的骄傲！',
+       kid:'火车从桥下面哐当哐当开过去，我还看到了桥头堡上漂亮的亭子！'},
+      {id:'d0-3',name:'龟山电视塔',time:'11:40',tag:'武汉城市地标',x:108,y:222,img:IMG+'real_guishan_tower.jpg',stamp:'龟山 · 高塔',
+       ai:'龟山电视塔矗立在汉阳龟山之巅，塔高200多米，是武汉最早的高层建筑之一。传说龟山与对面的蛇山隔江相望，就像乌龟和蛇守护着长江。登塔远眺，长江和武汉三镇尽收眼底！',
+       kid:'塔好高好高，直插蓝天！妈妈说是龟山的守护塔，我在山下拍了好久。'},
+      {id:'d0-4',name:'武汉关',time:'14:30',tag:'江汉关大楼',x:95,y:120,img:IMG+'real_wuhanguan.jpg',stamp:'江城 · 钟声',
+       ai:'武汉关又叫江汉关大楼，1924年建成，是武汉最有名的老建筑之一，以前是海关办公的地方。楼上的大钟每到整点就会响，"当——"的声音飘过长江，是武汉人记忆里的声音。',
+       kid:'大钟的指针会动呢！我刚好等到整点，听见了"当——"的钟声！'}
+    ]
+  },
+  {
+    id:'d1', date:'10月4日 周日', label:'Day2 武昌岳飞线', theme:'岳飞生活圈 · 武昌一日（文旅局推荐线）',
+    desc:'第二天走武昌线，用一天摸清岳飞的"生活圈"——他在哪儿安家、在哪儿操练岳家军。（线路来源：武汉市文化和旅游局）',
+    weather:'晴 25℃', cls:'d1',
+    records:[
+      {id:'d1-1',name:'司门口天桥·岳飞帅府',time:'08:30',tag:'岳飞帅府遗址',x:300,y:132,img:IMG+'sifumen.jpg',stamp:'鄂州 · 帅府',
+       ai:'第一站从司门口天桥出发！天桥旁的广东商城，就是南宋时期岳飞帅府的所在地。1134到1141年，武昌是岳家军的大本营，岳飞在这里驻守了整整七年，从这里多次北伐。站上天桥，黄鹤楼与之隔空相望，脚下是川流不息的民主路。',
+       kid:'妈妈告诉我，岳飞爷爷当年就在这里办公、练兵，我站在天桥上想象他骑马出发的样子！'},
+      {id:'d1-2',name:'黄鹤楼·岳飞广场',time:'09:40',tag:'满江红·岳飞文化',x:322,y:100,img:IMG+'yuefei_square2.jpg',stamp:'精忠 · 报国',
+       ai:'岳飞驻军武昌时，曾登楼北望，写下《满江红·登黄鹤楼有感》。这首诗现在镌刻在长达25米的大型青石浮雕上，就在黄鹤楼岳飞广场。广场里还有高达8米的岳飞铜像、"还我河山"石刻和"精忠报国"功德坊，每天都有志愿者免费讲解呢！',
+       kid:'石壁上有好大的"还我河山"四个字，我跟着志愿者叔叔一起念了《满江红》，好热血！'},
+      {id:'d1-3',name:'粮道街·马蹄营',time:'11:30',tag:'岳飞军马营地',x:298,y:178,img:IMG+'liangdao_street.jpg',stamp:'马蹄 · 美食',
+       ai:'逛完黄鹤楼肯定饿了，下一站粮道街！这里曾是岳飞军马队的营地，留下了"马蹄营"的名字，街上还能偶遇马蹄营小区。现在不闻马蹄声，只有美食香——赵师傅油饼包烧麦、熊太婆原汤水饺、覃肥叔桂林米粉，全是武汉人从小吃到大的味道！',
+       kid:'排了好长的队买油饼包烧麦，又香又糯，我还发现了"马蹄营"的牌子！'},
+      {id:'d1-4',name:'忠孝门路',time:'12:50',tag:'岳飞孝母',x:288,y:150,img:IMG+'zhongxiaomen.jpg',stamp:'忠孝 · 小东门',
+       ai:'忠孝门原来叫小东门，后人为纪念岳飞的孝母之心，把它改名为"忠孝门"。1136年岳飞的母亲病故于武昌，他赤脚扶灵，护送母亲从小东门出城前往庐山安葬。城门早已不存，但"忠孝门"三个字一直留到了今天，现在是藏在小巷子里安安静静的小路。',
+       kid:'这条小路好安静，牌子上写着"忠孝门"，我学到了岳飞很孝顺的故事。'},
+      {id:'d1-5',name:'武汉城隍庙',time:'13:30',tag:'供奉岳飞',x:268,y:158,img:IMG+'chenghuangmiao.jpg',stamp:'城隍 · 精忠',
+       ai:'武汉城隍庙位于长春观旁边，前身是武昌城隍庙。百余年来，庙里供奉的城隍爷都是岳飞！武汉人用这种方式，把这位英雄记了一年又一年。',
+       kid:'庙里的城隍爷居然是岳飞！原来大家真的记了他好多年好多年。'},
+      {id:'d1-6',name:'宝通禅寺·岳飞松',time:'14:20',tag:'岳飞手植松',x:340,y:185,img:IMG+'baotongsi.jpg',stamp:'岳飞松 · 禅寺',
+       ai:'相传岳飞曾在宝通禅寺后山亲手种过一片松林，叫"岳飞松"，旁边还建了一座岳飞亭，刻着岳家军抗金的线路。如今这里成了小猫们的乐园，古树与猫咪相伴，别有一番味道。',
+       kid:'我在后山看到了大大的松树，还有几只可爱的猫咪在晒太阳！'},
+      {id:'d1-7',name:'岳家嘴·沙湖公园',time:'15:40',tag:'岳家军水军操练地',x:372,y:218,img:IMG+'yuejiazui.jpg',stamp:'水军 · 沙湖',
+       ai:'武昌线的最后一站来到岳家嘴和沙湖公园A区。相传岳家军的水军曾在这一带操练！试想一下，你现在脚下这片安静的湖畔，八百年前全是战船和鼓声，气势震天。如今这里成了市民休闲的公园，湖水碧波荡漾，一派安宁。',
+       kid:'我在沙湖边想象八百年前这里全是大战船，感觉好神奇！'}
+    ]
+  },
+  {
+    id:'d2', date:'10月5日 周一', label:'Day3 汉阳岳飞线', theme:'再续汉阳游 · 半日（文旅局推荐线）',
+    desc:'第三天赴一场岳飞之约。"却归来，再续汉阳游，骑黄鹤"——跟着岳家军的足迹，看看当年的练兵场如今变成了什么模样。',
+    weather:'多云 23℃', cls:'d2',
+    records:[
+      {id:'d2-1',name:'翠微路·归元寺',time:'09:00',tag:'岳飞驰马翠微峰',x:118,y:212,img:IMG+'cuiwei_road.jpg',stamp:'翠微 · 归元',
+       ai:'"却归来，再续汉阳游，骑黄鹤"——仗打完了，岳飞最想做的就是回汉阳逛逛。汉阳可是岳飞的大型练兵竞技场，相传岳家军在此屯守休整近十个月。先从翠微路出发，这一带曾有座翠微峰，相传岳飞在此驰马夜归，作出"经年尘土满征衣，得得寻芳上翠微"的诗句。如今翠微峰所在处变成了有三百多年历史的归元寺。',
+       kid:'归元寺里有好大的罗汉堂，我还找到了"翠微古井"，想象岳飞的马在这里喝水。'},
+      {id:'d2-2',name:'翠微古井',time:'10:10',tag:'岳家军饮马处',x:108,y:224,img:IMG+'cuiwei_well.jpg',stamp:'古井 · 饮马',
+       ai:'在归元寺的一个小亭子里，藏着一口"翠微古井"。传说当年岳家军的兵马曾在这里饮水。近千年过去，古井仍在，井水清凉。站在井边，仿佛能听见八百年前战马低头饮水的声音，历史一下子变得好近。',
+       kid:'我趴在井口往下看，想象岳飞的战马在这里咕咚咕咚喝水！'},
+      {id:'d2-3',name:'冰塘角路',time:'11:00',tag:'岳家军屯兵器',x:92,y:236,img:IMG+'bingtangjiao3.jpg',stamp:'兵藏 · 冰糖',
+       ai:'冰塘角路也写作"冰糖角"，靠近汉阳火车站，就在爆火的文艺街道"站前花街"斜对面。它原本叫"兵藏阁"，相传是岳家军屯藏兵器的地方，武汉人口口相传，慢慢变成了现在的名字。地名里藏着一段金戈铁马的往事。',
+       kid:'"冰糖角"这个名字好甜，原来是"兵藏阁"变来的，历史真有意思！'},
+      {id:'d2-4',name:'邓甲村',time:'11:40',tag:'岳家军屯铠甲',x:88,y:250,img:IMG+'dengjiacun.jpg',stamp:'屯甲 · 邓顿',
+       ai:'邓甲村在武汉动物园对面，相传也是岳家军屯藏兵器铠甲的地方。为什么叫"邓"？原来武汉话里把"存放、放置"念作 dèn，写作"顿"，慢慢演变成了现在的名字。一个地名，藏着武汉话和岳飞两段故事。顺路看看就好，不必特意绕过去。',
+       kid:'原来"邓"是武汉话"顿"的意思，我学会了一句武汉话！'},
+      {id:'d2-5',name:'马沧湖·武汉动物园',time:'14:30',tag:'岳飞练兵水师',x:135,y:268,img:IMG+'macanghu.jpg',stamp:'马沧 · 水师',
+       ai:'马沧湖在武汉动物园里，因为河浅滩宽、水草丰沛，是岳飞放养战马、操练水师的阵地。从空中俯瞰，它与墨水湖相连，像一块绿宝石镶嵌在高楼林立的城市中。当年放养战马的碧湖河滩，如今变成了绿意盎然的动物园，老百姓安居乐业，将军一定会倍感欣慰吧。',
+       kid:'我在动物园看到好多动物，湖边绿绿的，讲解说这里以前是岳飞叔叔练兵的地方！'}
+    ]
+  }
+];
+const ROUTES=[
+  {id:'r-yue-wuchang',name:'岳飞·武昌线',icon:'⚔️',desc:'Day2 · 一天摸清岳飞的"生活圈"（7站）',color:'#FF7A59',rbg:'FFF0EC',
+   spots:[
+    {name:'岳飞帅府遗址',desc:'司门口天桥旁，岳飞驻守七年的大本营',x:300,y:132,visited:true,img:IMG+'sifumen.jpg',intro:'南宋时期武昌称鄂州，是抵御金军的核心防线。1134-1141年岳飞率岳家军在此驻守七年，多次北伐，立下赫赫战功。'},
+    {name:'黄鹤楼岳飞广场',desc:'25米《满江红》浮雕、8米岳飞铜像',x:322,y:100,visited:true,img:IMG+'yuefei_square2.jpg',intro:'岳飞登黄鹤楼北望，写下《满江红·登黄鹤楼有感》。广场有岳飞铜像、"还我河山"石刻等十余处岳飞文化元素。'},
+    {name:'粮道街马蹄营',desc:'岳飞军马队营地，如今美食街',x:298,y:178,visited:true,img:IMG+'liangdao_street.jpg',intro:'这里曾是岳飞军马队营地，留下"马蹄营"之名。如今是武汉著名的过早美食街。'},
+    {name:'忠孝门路',desc:'小东门改名，纪念岳飞孝母',x:288,y:150,visited:true,img:IMG+'zhongxiaomen.jpg',intro:'原名小东门，后人为纪念岳飞孝母之心改名忠孝门。岳飞母亲病故武昌后，他赤脚扶灵从此出城前往庐山安葬。'},
+    {name:'武汉城隍庙',desc:'百年来供奉的城隍爷是岳飞',x:268,y:158,visited:true,img:IMG+'chenghuangmiao.jpg',intro:'位于长春观旁，前身武昌城隍庙。百余年来庙里供奉的城隍爷都是岳飞。'},
+    {name:'宝通禅寺岳飞松',desc:'岳飞手植松林与岳飞亭',x:340,y:185,visited:true,img:IMG+'baotongsi.jpg',intro:'相传岳飞在此亲手种下松林称"岳飞松"，旁建岳飞亭刻岳家军抗金线路。如今古树成荫，还成了猫咪的乐园。'},
+    {name:'岳家嘴·沙湖',desc:'岳家军水军操练地',x:372,y:218,visited:true,img:IMG+'yuejiazui.jpg',intro:'岳家军水军曾在这一带操练。试想一下，你所在的地方八百年前全是战船和鼓声，气势震天。'}
+   ]},
+  {id:'r-yue-hanyang',name:'岳飞·汉阳线',icon:'🐎',desc:'Day3 · 半日赴岳飞之约（5站）',color:'#A78BFA',rbg:'EFEBFF',
+   spots:[
+    {name:'翠微路归元寺',desc:'岳飞驰马翠微峰，诗句由此而来',x:118,y:212,visited:true,img:IMG+'cuiwei_road.jpg',intro:'岳飞曾在此驰马夜归，作出"得得寻芳上翠微"诗句。翠微峰所在处现有三百多年历史的归元寺。'},
+    {name:'翠微古井',desc:'传说岳家军兵马在此饮水',x:108,y:224,visited:true,img:IMG+'cuiwei_well.jpg',intro:'归元寺小亭子里的一口古井，传说岳家军的兵马曾在这里饮水。近千年过去，古井仍在，井水清凉。'},
+    {name:'冰塘角路',desc:'原名"兵藏阁"，屯兵器处',x:92,y:236,visited:true,img:IMG+'bingtangjiao3.jpg',intro:'也写作"冰糖角"，原名"兵藏阁"，相传是岳家军屯藏兵器之处，靠近汉阳火车站。'},
+    {name:'邓甲村',desc:'屯铠甲，武汉话"顿"演变而来',x:88,y:250,visited:true,img:IMG+'dengjiacun.jpg',intro:'在武汉动物园对面，相传是岳家军屯藏兵器铠甲之地。武汉话把"存放"念作 dèn（顿），慢慢演变成现在的名字。'},
+    {name:'马沧湖水师阵地',desc:'岳飞放养战马、操练水师之地',x:135,y:268,visited:true,img:IMG+'macanghu.jpg',intro:'位于武汉动物园内，河浅滩宽、水草丰沛，是岳飞放养战马、操练水师的阵地。'}
+   ]},
+  {id:'r-zhiyin',name:'知音文化线',icon:'🎵',desc:'高山流水遇知音 · 古琴台出发的文化之旅',color:'#A78BFA',rbg:'EFEBFF',
+   spots:[
+    {name:'古琴台',desc:'伯牙子期相遇地，《高山流水》发源',x:100,y:195,visited:false,img:null,art:'tower',intro:'相传伯牙在此鼓琴、钟子期听之，"知音"典故由此而来。古琴曲《高山流水》发源地，与黄鹤楼、晴川阁并称武汉三大名胜。'},
+    {name:'月湖风景区',desc:'"武汉最美客厅"，知音主题公园',x:88,y:206,visited:false,img:null,art:'tower',intro:'月湖畔有编磬雕像、古琴与钢琴雕塑、可以弹奏的激光琴，处处是知音主题装置，月影舞台与音乐森林适合漫步。'},
+    {name:'琴台大剧院·音乐厅',desc:'知音大道上的艺术殿堂',x:78,y:192,visited:false,img:null,art:'tower',intro:'月湖文化艺术中心核心，华中地区规模最大的特大型文化设施。每年琴台音乐节群星云集，话剧音乐剧排期满满。'},
+    {name:'汉阳造艺术区',desc:'百年兵工厂变身文创园',x:112,y:165,visited:false,img:null,art:'street',intro:'由百年汉阳兵工厂老厂房改造的文创园，红砖厂房里藏着咖啡馆、艺术空间和设计工作室，复古又文艺。'},
+    {name:'晴川阁',desc:'"晴川历历汉阳树"，三楚胜境',x:150,y:168,visited:false,img:null,art:'tower',intro:'与黄鹤楼隔江相望，因崔颢"晴川历历汉阳树"诗句得名。园内有禹稷行宫，可看大禹治水文化展。'},
+    {name:'龟山风景区',desc:'灵龟镇水的传说，俯瞰两江',x:125,y:176,visited:false,img:null,art:'tower',intro:'与蛇山隔江对峙，传说大禹治水时灵龟镇水于此。山顶可俯瞰长江大桥与两江交汇，电视塔是醒目坐标。'},
+    {name:'南岸嘴·两江交汇',desc:'长江汉江交汇处的双色江面',x:136,y:232,visited:false,img:null,art:'bridge',intro:'长江与汉江在此交汇，两条江水颜色分明是著名奇观，江滩开阔人少景美，是看日落的好地方。'},
+    {name:'知音号',desc:'长江首部漂移式多维体验剧',x:58,y:150,visited:false,img:null,art:'bridge',intro:'登上复古蒸汽轮船《知音号》，在长江夜航中穿越回百年前的武汉。船在航行、戏在身边，是当下最热门的文化体验之一。'},
+    {name:'武汉动物园',desc:'焕新归来的亲子热门地标',x:142,y:276,visited:false,img:null,art:'bell',intro:'升级改造后重新开放的武汉动物园，与马沧湖相伴而建——这片湖正是岳飞当年操练水师的地方。'}
+   ]},
+  {id:'r-red',name:'红色足迹线',icon:'🚩',desc:'英雄城市的红色记忆 · 首义精神传承之路',color:'#D64545',rbg:'FDECEC',
+   spots:[
+    {name:'红楼·辛亥革命武昌起义纪念馆',desc:'武昌首义爆发地，鄂军都督府旧址',x:295,y:168,visited:false,img:null,art:'street',intro:'红墙红瓦的百年建筑，1911年武昌起义后鄂军都督府所在地，终结两千年帝制的历史现场，国家一级博物馆。'},
+    {name:'辛亥革命博物院·首义广场',desc:'全景呈现辛亥革命的专题博物馆',x:283,y:183,visited:false,img:null,art:'street',intro:'辛亥革命专题博物馆中展览规模最大、复原场景最多的一座，与红楼隔首义广场相望，免费参观。'},
+    {name:'起义门',desc:'武昌古城门，首义胜利的开端',x:255,y:216,visited:false,img:null,art:'tower',intro:'武昌古城十大城门之一，原名中和门，首义时革命党打开此门迎部队入城。1912年为纪念改名"起义门"。'},
+    {name:'红巷·武汉革命博物馆',desc:'农讲所·毛泽东旧居·五大会址',x:315,y:148,visited:false,img:null,art:'street',intro:'"中国第一红街"都府堤上的革命旧址群：毛泽东主持的中央农民运动讲习所、《湖南农民运动考察报告》诞生地旧居、中共五大会址。'},
+    {name:'八七会议会址纪念馆',desc:'"枪杆子里出政权"的诞生地',x:88,y:128,visited:false,img:null,art:'street',intro:'1927年8月7日中共中央在此召开紧急会议，毛泽东提出"政权是由枪杆子中取得的"，中国革命由此实现历史性转折。'},
+    {name:'中共中央机关旧址纪念馆',desc:'大革命时期的全国红色中心',x:78,y:140,visited:false,img:null,art:'street',intro:'1926年底中共中央从上海迁驻汉口，陈独秀、瞿秋白、毛泽东、周恩来等在此办公居住，领导了收回汉口英租界。'},
+    {name:'二七纪念馆',desc:'京汉铁路工人大罢工纪念',x:60,y:96,visited:false,img:null,art:'tower',intro:'纪念1923年二七大罢工，林祥谦、施洋等烈士"头可断、血可流、工不可复"的英勇气概，是中国工人运动的丰碑。'},
+    {name:'八路军武汉办事处旧址',desc:'抗战时期的红色桥梁',x:72,y:114,visited:false,img:null,art:'street',intro:'抗战时期八路军在汉口设立的重要办事机构，周恩来、董必武等曾在此领导抗日民族统一战线工作。'},
+    {name:'施洋烈士陵园',desc:'"劳工律师"施洋安息地',x:358,y:234,visited:false,img:null,art:'tower',intro:'位于洪山南麓，早期工人运动领袖、"劳工律师"施洋烈士的纪念碑与铜像庄严肃穆，是缅怀先烈的红色地标。'},
+    {name:'向警予烈士陵园',desc:'龟山之巅的巾帼英雄纪念地',x:108,y:186,visited:false,img:null,art:'tower',intro:'中国共产党唯一的女创始人、第一位女中央委员向警予烈士安息于龟山西北麓，被毛泽东赞为"模范妇女领袖"。'}
+   ]},
+  {id:'r-food',name:'过早美食线',icon:'🍜',desc:'一碗热干面，唤醒武汉的清晨',color:'#FFC93C',rbg:'FFF6DB',
+   spots:[
+    {name:'户部巷',desc:'武汉过早第一街',x:228,y:168,visited:false,img:null,art:'noodle',intro:'"过早"是武汉人吃早饭的说法。户部巷是著名的美食街，热干面、豆皮、面窝、蛋酒应有尽有。'},
+    {name:'粮道街',desc:'马蹄营旁的宝藏美食街',x:298,y:178,visited:true,img:IMG+'liangdao_street.jpg',intro:'油饼包烧麦、原汤水饺、桂林米粉，还有赵师傅、熊太婆等一众老店。'},
+    {name:'水塔美食街',desc:'汉口水塔下的老武汉味道',x:95,y:128,visited:false,img:null,art:'noodle',intro:'中山大道百年水塔脚下的人气美食街，老武汉经典小吃云集，逛完江汉路顺路就能来。'},
+    {name:'山海关路',desc:'汉口老牌过早街',x:105,y:150,visited:false,img:null,art:'noodle',intro:'汉口著名的过早一条街，牛肉粉、豆皮、面窝、糊汤粉，烟火气十足。'},
+    {name:'万松园雪松路',desc:'宵夜与过早两不误',x:70,y:110,visited:false,img:null,art:'noodle',intro:'武汉著名美食街，白天过早、夜晚宵夜，小龙虾、牛肉火锅、烧麦样样出名。'},
+    {name:'吉庆街',desc:'品尝武汉特色小吃',x:100,y:130,visited:false,img:null,art:'noodle',intro:'汉口老牌美食夜市，一边吃小吃一边听民间艺人表演，充满武汉市井烟火气。'},
+    {name:'玫瑰街',desc:'汉阳人的深夜食堂',x:118,y:238,visited:false,img:null,art:'noodle',intro:'汉阳著名美食街，本地人的宵夜据点，烧烤、卤味、串串，烟火气十足。'}
+   ]},
+  {id:'r-river',name:'长江文化线',icon:'🌊',desc:'万里长江，百桥之都，江城风骨',color:'#4FD1A5',rbg:'E4F8F1',
+   spots:[
+    {name:'长江大桥',desc:'万里长江第一桥，天堑变通途',x:200,y:255,visited:true,img:IMG+'real_changjiang_bridge.jpg',intro:'1957年通车，是新中国在长江上修建的第一座大桥。上层跑汽车、下层走火车。'},
+    {name:'武汉关',desc:'百年海关大楼，江城钟声',x:95,y:120,visited:true,img:IMG+'real_wuhanguan.jpg',intro:'1924年建成，武汉最有名的老建筑之一。楼上大钟整点报时，是武汉人的城市记忆。'},
+    {name:'黄鹤楼',desc:'天下江山第一楼，长江之畔',x:322,y:100,visited:true,img:IMG+'real_huanghelou.jpg',intro:'江南三大名楼之首，始建于三国时代。崔颢的《黄鹤楼》被誉为"唐人七律第一"。夜晚还有"夜上黄鹤楼"行浸式光影演艺。'},
+    {name:'龟山电视塔',desc:'龟山之巅的城市地标',x:108,y:222,visited:true,img:IMG+'real_guishan_tower.jpg',intro:'矗立在汉阳龟山之巅，是武汉最早的高层建筑之一，登塔远眺长江与三镇尽收眼底。'},
+    {name:'汉口江滩',desc:'亚洲最大江滩公园',x:75,y:185,visited:false,img:null,art:'bridge',intro:'沿长江而建的巨型江滩公园，芦苇荡、观江平台、灯光秀，是散步看江景的好去处。'},
+    {name:'江汉路步行街',desc:'百年商业街，武汉最热闹',x:100,y:140,visited:false,img:null,art:'street',intro:'1600米长的百年商业步行街，历史建筑与潮流店铺并存，被称为"武汉二十世纪建筑博物馆"，是当下人气最旺的打卡地之一。'},
+    {name:'中华路码头',desc:'几块钱轮渡横跨长江',x:245,y:262,visited:false,img:null,art:'bridge',intro:'坐轮渡从武昌到汉口是武汉最经典的过江方式，甲板上吹江风看两岸风光，夜航还能看两江四岸灯光秀。'}
+   ]},
+  {id:'r-campus',name:'大学人文线',icon:'🎓',desc:'百年学府，珞珈山下的青春',color:'#5AC8FA',rbg:'E4F3FF',
+   spots:[
+    {name:'武汉大学',desc:'中国最美大学，樱花与老斋舍',x:355,y:195,visited:false,img:null,art:'tower',intro:'坐落于珞珈山，被誉为"中国最美大学"。春天樱花盛开时漫山粉白，老斋舍、樱顶是经典打卡点。'},
+    {name:'东湖绿道',desc:'世界级绿道，城市绿心',x:385,y:172,visited:false,img:null,art:'bridge',intro:'全长100多公里的东湖绿道，串联磨山、听涛、落雁景区，骑行漫步皆宜，紧挨武大，逛完校园顺路就到。'},
+    {name:'华中科技大学',desc:'森林中的大学',x:378,y:210,visited:false,img:null,art:'tower',intro:'校园绿树成荫，有"森林大学"之称。梧桐大道、青年园、喻家山，学术氛围浓厚。'},
+    {name:'中南财经政法大学',desc:'首义校区，最早岳飞庙址',x:300,y:190,visited:false,img:null,art:'tower',intro:'首义校区大门附近是中国最早的岳飞庙旧址。武汉人记了岳飞八百多年。'},
+    {name:'华中师范大学',desc:'桂子山上的花园学府',x:330,y:215,visited:false,img:null,art:'tower',intro:'位于桂子山，校园里桂花飘香，有"花园学府"之称。'},
+    {name:'地大逸夫博物馆',desc:'光谷的宝藏恐龙博物馆',x:382,y:258,visited:false,img:null,art:'bell',intro:'中国地质大学逸夫博物馆，馆藏大量化石与矿物标本，恐龙展厅尤其震撼，是亲子研学好去处。'}
+   ]}
+];
+
+/* ==== 状态 ==== */
+// 预置10张武汉人文风景照片
+const WUHAN_PHOTOS=[
+  {file:'wh_eastlake.jpg',name:'东湖'},
+  {file:'wh_wuda.jpg',name:'武汉大学'},
+  {file:'wh_jianghanlu.jpg',name:'江汉路步行街'},
+  {file:'wh_lihuangpi.jpg',name:'黎黄陂路'},
+  {file:'wh_gudesi.jpg',name:'古德寺'},
+  {file:'wh_qingchuan.jpg',name:'晴川阁'},
+  {file:'wh_hunjie.jpg',name:'楚河汉街'},
+  {file:'wh_riverfront.jpg',name:'武昌江滩'},
+  {file:'wh_museum.jpg',name:'湖北省博物馆'},
+  {file:'wh_night.jpg',name:'长江夜游'}
+];
+// 图片路径解析：自包含版用内嵌dataURL，在线版用相对路径
+function imgSrc(file){
+  if(window.__EMBEDDED_IMAGES__ && window.__EMBEDDED_IMAGES__[file]) return window.__EMBEDDED_IMAGES__[file];
+  return 'images/'+file;
+}
+let book={title:'Celine的武汉三日游',selected:[],photos:[],note:''};
+let histBooks=[];
+function loadState(){
+  try{const b=localStorage.getItem('whm_v4_book');if(b)book=JSON.parse(b);}catch(e){}
+  // 修复旧数据里失效的相对路径照片（自包含版无 images 目录）
+  if(book.photos&&book.photos.length){
+    book.photos.forEach(p=>{
+      if(p.src && p.src.indexOf('images/')===0){
+        const fn=p.src.substring(7);
+        p.src=imgSrc(fn);
+      }
+    });
+    // 剔除彻底加载不了的（没有 src 的）
+    book.photos=book.photos.filter(p=>p.src);
+  }
+  // 首次或照片为空时，注入10张武汉实景照片
+  if(!book.photos||!book.photos.length){
+    book.photos=WUHAN_PHOTOS.map(p=>({src:imgSrc(p.file),f:'none',r:0,name:p.name,seed:true}));
+  }
+  try{const h=localStorage.getItem('whm_v4_hist');if(h)histBooks=JSON.parse(h);}catch(e){}
+}
+function saveState(){
+  try{localStorage.setItem('whm_v4_book',JSON.stringify(book));}catch(e){}
+}
+function saveHist(){
+  try{localStorage.setItem('whm_v4_hist',JSON.stringify(histBooks));}catch(e){}
+}
+function findRec(id){for(const d of DAYS){const r=d.records.find(x=>x.id===id);if(r)return r;}return null;}
+function allRecords(){return DAYS.flatMap(d=>d.records);}
+
+/* ==== Tab1 记忆时间轴 ==== */
+let curDay=DAYS[0].id;
+function renderDayTabs(){
+  document.getElementById('dayTabs').innerHTML=DAYS.map(d=>
+    `<div class="day-chip ${d.id===curDay?'on':''}" onclick="selectDay('${d.id}')"><b>${d.label}</b><span>${d.date.slice(0,6)} · ${d.records.length}站</span></div>`).join('');
+}
+function selectDay(id){curDay=id;renderDayTabs();renderDayContent();}
+function renderDayContent(){
+  const d=DAYS.find(x=>x.id===curDay);
+  const list=d.records.map((r,i)=>`
+    <div class="tl-item" style="animation-delay:${i*0.05}s">
+      <div class="tl-dot"></div>
+      <div class="tl-time">${r.time}</div>
+      <div class="tl-card" onclick="openDetail('${r.id}')">
+        <div class="thumb"><img src="${r.img}" loading="lazy"><span class="idx">NO.${String(i+1).padStart(2,'0')}</span><span class="stamp">${r.stamp}</span><span class="visited-mark">✓ 已打卡</span></div>
+        <div class="info"><h3>${r.name} <span class="tag">${r.tag}</span></h3><p>${r.ai.slice(0,42)}……</p><div class="more">点击收听 AI 讲解 →</div></div>
+      </div>
+    </div>`).join('');
+  document.getElementById('dayContent').innerHTML=`<div class="day-banner ${d.cls}"><h3>${d.theme}</h3><p>${d.desc}<br>${d.date} · ${d.weather}</p></div><div class="timeline">${list}</div><div class="tl-end">${d.label} · 未完待续 ✨</div>`;
+}
+
+/* ==== 记忆详情 ==== */
+let speaking=false;
+function openDetail(id){
+  const r=findRec(id);stopSpeak();
+  document.getElementById('sheet-detail').innerHTML=`
+    <div class="sheet-grab"></div><button class="sheet-close btn" onclick="closeOv('ov-detail')">×</button>
+    <div class="detail-hero"><img src="${r.img}"><button class="back btn" onclick="closeOv('ov-detail')">←</button></div>
+    <div class="detail-body">
+      <div class="detail-title">${r.name}<span class="chip">已打卡</span></div>
+      <div class="detail-meta">${r.time} · ${r.tag} · 武汉</div>
+      <div class="tts-box"><div class="tts-top">
+        <button class="tts-play btn" id="ttsBtn" onclick="toggleSpeak('${id}')">▶</button>
+        <div><b>AI 语音讲解</b><br><span id="ttsState">点击播放，听 AI 讲故事</span></div>
+        <div class="waveform" id="wave">${Array.from({length:12},()=>'<i></i>').join('')}</div>
+      </div><div class="tts-text">${r.ai}</div></div>
+      <div class="detail-section-t">👧 Celine 的童言童语</div>
+      <div class="kid-note"><b>Celine 说：</b>${r.kid}</div>
+    </div>`;
+  openOv('ov-detail');
+}
+function toggleSpeak(id){
+  if(speaking){stopSpeak();return;}
+  if(!('speechSynthesis' in window)){toast('当前设备不支持语音播放');return;}
+  const r=findRec(id),u=new SpeechSynthesisUtterance(r.ai);
+  u.lang='zh-CN';u.rate=.95;u.pitch=1.05;u.onend=()=>stopSpeak();
+  speechSynthesis.cancel();speechSynthesis.speak(u);speaking=true;
+  document.getElementById('ttsBtn').textContent='❚❚';document.getElementById('ttsBtn').classList.add('playing');
+  document.getElementById('ttsState').textContent='正在讲解中…';animateWave(true);
+}
+function stopSpeak(){
+  if('speechSynthesis' in window)speechSynthesis.cancel();
+  speaking=false;
+  const b=document.getElementById('ttsBtn');if(b){b.textContent='▶';b.classList.remove('playing');}
+  const s=document.getElementById('ttsState');if(s)s.textContent='点击播放，听 AI 讲故事';
+  animateWave(false);
+}
+let waveTimer=null;
+function animateWave(on){
+  const bars=document.querySelectorAll('#wave i');if(!bars.length)return;
+  clearInterval(waveTimer);
+  if(!on){bars.forEach(b=>b.style.height='5px');return;}
+  waveTimer=setInterval(()=>bars.forEach(b=>b.style.height=(6+Math.random()*16)+'px'),140);
+}
+
+/* ==== Tab2 我的路书 ==== */
+function renderBookPage(){
+  const list=document.getElementById('histList');
+  if(!histBooks.length){
+    list.innerHTML=`<div class="hist-empty">还没有路书作品哦 🎨<br>点上面「开始制作专属路书」，生成你的第一本路书吧！</div>`;
+  }else{
+    list.innerHTML=histBooks.map((b,i)=>`
+      <div class="hist-card press" onclick="openHistPoster(${i})">
+        <div class="hist-thumb">${histThumbHTML(b)}</div>
+        <div class="hist-info"><b>${b.title}</b><span>${b.date} · ${b.count} 个足迹 · ${b.photos} 张照片</span><span class="htag">点击查看详情 →</span></div>
+      </div>`).join('');
+  }
+}
+function histThumbHTML(b){
+  if(b.heroImg)return `<img src="${imgSrc(b.heroImg)}" style="width:100%;height:100%;object-fit:cover;object-position:top;display:block">`;
+  if(b.thumb)return `<img src="${b.thumb}" style="width:100%;height:100%;object-fit:cover;display:block">`;
+  const imgs=(b.ids||[]).slice(0,4).map(id=>{const r=findRec(id);return r&&r.img?r.img:null;}).filter(Boolean);
+  if(imgs.length)return `<div class="hist-collage">${imgs.map(u=>`<img src="${u}">`).join('')}</div>`;
+  return `<div class="hist-collage"><div class="hc-empty">📖</div></div>`;
+}
+/* ==== 拍摄 / 我的照片 / 下一站计划 ==== */
+function shootPhoto(){
+  document.getElementById('sheet-photos').innerHTML=`
+    <div class="sheet-grab"></div><button class="sheet-close btn" onclick="closeOv('ov-photos')">×</button>
+    <div class="perm-dialog">
+      <div class="perm-ic">📷</div>
+      <h3>是否允许使用手机相机？</h3>
+      <p>「武汉记忆相机」想要访问你的相机<br>用于拍摄武汉的精彩瞬间</p>
+      <div class="perm-btns">
+        <button class="perm-no" onclick="closeOv('ov-photos');toast('已拒绝访问相机')">不允许</button>
+        <button class="perm-yes" onclick="closeOv('ov-photos');toast('已允许访问相机（演示）')">允许</button>
+      </div>
+      <div class="perm-note">* 本页面为演示，不会真正调用相机</div>
+    </div>`;
+  openOv('ov-photos');
+}
+function showMyPhotos(){
+  const ps=book.photos;
+  document.getElementById('sheet-photos').innerHTML=`
+    <div class="sheet-grab"></div><button class="sheet-close btn" onclick="closeOv('ov-photos')">×</button>
+    <div style="padding:14px 20px 4px;text-align:center"><div class="sec-kicker">MY PHOTOS</div><div class="sec-title" style="font-size:22px">我的照片 🌆</div><div class="sec-desc">共 ${ps.length} 张 · 可以在制作路书时使用</div></div>
+    ${ps.length?`<div class="myphoto-grid">${ps.map((p,i)=>`<div class="mp-big"><img src="${p.src}" style="filter:${p.f||'none'};transform:rotate(${p.r||0}deg)">${p.name?`<span class="mp-name">${p.name}</span>`:''}<span class="del" onclick="delMyPhoto(${i})">×</span></div>`).join('')}</div>`:`<div class="hist-empty" style="margin:16px 20px">还没有照片哦 📷<br>点上面的「拍摄」按钮，或去制作路书里添加！</div>`}
+    <div style="height:10px"></div>`;
+  openOv('ov-photos');
+}
+function delMyPhoto(i){book.photos.splice(i,1);saveState();showMyPhotos();toast('照片已删除');}
+function showNextPlans(){
+  const all=DAYS.flatMap(d=>d.records.map(r=>({...r,day:d.label})));
+  const chosen=book.selected.map(id=>findRec(id)).filter(Boolean);
+  const todo=all.filter(r=>!book.selected.includes(r.id));
+  document.getElementById('sheet-photos').innerHTML=`
+    <div class="sheet-grab"></div><button class="sheet-close btn" onclick="closeOv('ov-photos')">×</button>
+    <div style="padding:14px 20px 4px;text-align:center"><div class="sec-kicker">NEXT STATION</div><div class="sec-title" style="font-size:22px">下一站计划 🧭</div><div class="sec-desc">已选 ${chosen.length} 个地标 · 点击 ＋ 添加 / － 减去</div></div>
+    ${chosen.length?`<div class="plan-sec-t">✓ 我的计划（${chosen.length}）</div><div class="plan-list">${chosen.map(r=>`
+      <div class="plan-row on"><img src="${r.img}"><div class="pr-info"><b>${r.name}</b><span>${r.time} · ${r.day}</span></div><button class="pr-btn minus" onclick="planRemove('${r.id}')">－</button></div>`).join('')}</div>`:''}
+    <div class="plan-sec-t">＋ 添加地标（${todo.length}）</div>
+    <div class="plan-list">${todo.map(r=>`
+      <div class="plan-row"><img src="${r.img}"><div class="pr-info"><b>${r.name}</b><span>${r.time} · ${r.day}</span></div><button class="pr-btn plus" onclick="planAdd('${r.id}')">＋</button></div>`).join('')}</div>
+    <div class="save-bar"><button class="save-main btn" onclick="closeOv('ov-photos');switchTab('book');openMaker()">✓ 完成，去制作路书</button></div>`;
+  openOv('ov-photos');
+}
+function planAdd(id){if(!book.selected.includes(id))book.selected.push(id);saveState();showNextPlans();toast('已加入下一站计划 ✓');}
+function planRemove(id){book.selected=book.selected.filter(x=>x!==id);saveState();showNextPlans();toast('已从计划移除');}
+function goPlanRoute(rid){
+  closeOv('ov-photos');
+  switchTab('map');
+  setTimeout(()=>openRoute(rid),80);
+}
+
+/* ==== 制作路书 ==== */
+function openMaker(){
+  renderMaker();
+  openOv('ov-maker');
+}
+function renderMaker(){
+  document.getElementById('sheet-maker').innerHTML=`
+    <div class="sheet-grab"></div><button class="sheet-close btn" onclick="closeOv('ov-maker')">×</button>
+    <div class="maker-head"><div class="sec-kicker">MAKE YOUR BOOK</div><div class="sec-title">制作我的路书 ✏️</div></div>
+    <input class="maker-title-input" id="makerTitle" value="${book.title.replace(/"/g,'&quot;')}" maxlength="20" oninput="book.title=this.value;saveState()">
+    <div class="maker-sect"><h4>① 勾选我去过的地标</h4><div class="hint">数据来自记忆时间轴，勾选想放进路书的地标</div>
+      <div class="pick-days">${DAYS.map(d=>`
+        <div class="pick-day"><div class="pick-day-t">${d.label}</div><div class="pick-grid">
+          ${d.records.map(r=>`
+            <div class="pick-spot ${book.selected.includes(r.id)?'on':''}" onclick="toggleSel('${r.id}')">
+              <img src="${r.img}"><span>${r.name}</span><div class="ck">✓</div>
+            </div>`).join('')}
+        </div></div>`).join('')}
+      </div>
+    </div>
+    <div class="maker-sect"><h4>② 添加我的照片</h4><div class="hint">从手机相册或相机添加照片</div></div>
+    <div class="maker-photos" id="makerPhotos">${renderMakerPhotos()}</div>
+    <div class="maker-sect"><h4>③ 写点感受</h4></div>
+    <textarea class="maker-note" id="makerNote" placeholder="记录这趟旅程的心情……" oninput="book.note=this.value;saveState()">${book.note||''}</textarea>
+    <div class="maker-actions">
+      <button class="ma-photo press" onclick="document.getElementById('makerFile').click()">📷 添加我的照片</button>
+      <button class="ma-ai press" onclick="makerAI()">✨ AI 成文</button>
+      <button class="ma-gen press" onclick="generatePoster()">🎨 生成路书海报</button>
+    </div>
+    <input type="file" id="makerFile" accept="image/*" multiple style="display:none" onchange="addPhotos(this)">
+    <div style="height:10px"></div>`;
+}
+function renderMakerPhotos(){
+  return book.photos.map((p,i)=>`<div class="mp-item"><img src="${p}" style="filter:${p.f||'none'};transform:rotate(${p.r||0}deg)"><span class="del" onclick="delPhoto(${i})">×</span></div>`).join('')+
+    `<label class="photo-add" style="width:66px;height:66px;border:2px dashed #FFC93C;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#E8A800;cursor:pointer;background:#FFFBEF"><b style="font-size:22px;font-weight:400">＋</b><span style="font-size:9px">照片</span><input type="file" accept="image/*" multiple onchange="addPhotos(this)" style="display:none"></label>`;
+}
+function toggleSel(id){
+  const i=book.selected.indexOf(id);
+  if(i>=0)book.selected.splice(i,1);else book.selected.push(id);
+  saveState();
+  const el=document.querySelector(`.pick-spot[onclick="toggleSel('${id}')"]`);
+  if(el)el.classList.toggle('on',book.selected.includes(id));
+  toast(book.selected.includes(id)?'已加入路书 ✓':'已移出路书');
+}
+function addPhotos(input){
+  const files=Array.from(input.files||[]);
+  let left=files.length;
+  if(!left)return;
+  files.forEach(f=>{
+    const reader=new FileReader();
+    reader.onload=e=>{book.photos.push({src:e.target.result,f:'none',r:0});if(--left===0){saveState();document.getElementById('makerPhotos').innerHTML=renderMakerPhotos();toast('照片已添加 📷');}};
+    reader.readAsDataURL(f);
+  });
+}
+function delPhoto(i){book.photos.splice(i,1);saveState();document.getElementById('makerPhotos').innerHTML=renderMakerPhotos();toast('照片已删除');}
+function makerAI(){
+  if(!book.selected.length){toast('请先勾选想去过的地标');return;}
+  document.getElementById('ov-travel').dataset.fromMaker='1';
+  showTravel();
+}
+function generatePoster(){
+  if(!book.selected.length){toast('请先勾选想去过的地标哦');return;}
+  toast('正在生成海报…');
+  const c=document.createElement('canvas');c.width=720;c.height=960;
+  drawPoster(c,{title:book.title,ids:book.selected,note:book.note,cb:()=>finishPoster(c)});
+}
+function finishPoster(c){
+  let data=null;
+  try{data=c.toDataURL('image/jpeg',0.85);}catch(e){data=null;}
+  _lastPoster=data;
+  const snap={title:book.title,date:'2026.10.03-05',count:book.selected.length,photos:book.photos.length,poster:data,thumb:null,ids:book.selected.slice(),note:book.note};
+  histBooks.unshift(snap);
+  try{saveHist();}catch(e){}
+  closeOv('ov-maker');renderBookPage();
+  document.getElementById('sheet-poster').innerHTML=`
+    <div class="sheet-grab"></div><button class="sheet-close btn" onclick="closeOv('ov-poster')">×</button>
+    <div style="padding:14px 20px 0;text-align:center"><div class="sec-kicker">YOUR POSTER</div><div class="sec-title" style="font-size:22px">路书海报已生成 🎉</div></div>
+    <div class="poster-big dom-poster">${htmlPosterHTML(snap)}</div>
+    <div class="save-bar"><button class="save-main btn" onclick="downloadPoster()">${data?'⬇️ 保存图片版':'📷 截图保存海报'}</button><button class="save-sub btn" onclick="closeOv('ov-poster');switchTab('book')">📚 查看历史路书</button></div>`;
+  openOv('ov-poster');
+  if(!data)toast('长按或截图即可保存这张海报');
+}
+/* ============ 图文并茂杂志海报（统一展示版） ============ */
+function htmlPosterHTML(b){
+  const recs=(b.ids||[]).map(id=>findRec(id)).filter(Boolean);
+  const cover=recs[0]&&recs[0].img?recs[0].img:(recs[0]&&recs[0]._img||'images/real_huanghelou.jpg');
+  const gallery=recs.slice(0,5);
+  return `<div class="mag">
+    <div class="mag-hero" style="background-image:url('${cover}')">
+      <div class="mag-brand">✈ WUHAN MEMORY CAMERA</div>
+      <div class="mag-seal">独家<br>记忆</div>
+      <div class="mag-hero-text">
+        <div class="en">EXPLORING WUHAN · 江城漫游</div>
+        <h1>${b.title}</h1>
+        <div class="date">${b.date} · 探索者 Celine</div>
+      </div>
+    </div>
+    <div class="mag-stats">
+      <div><b>${recs.length}</b><span>打卡地标</span></div>
+      <div><b>${b.photos||10}</b><span>珍藏照片</span></div>
+      <div><b>3</b><span>探索天数</span></div>
+    </div>
+    <div class="mag-body">
+      <div class="mag-kicker">📸 一路走来的精彩瞬间</div>
+      <div class="mag-collage">
+        ${gallery.map((r,i)=>`
+          <div class="mag-photo ${i===0?'big':''}">
+            <img src="${r.img||'images/real_huanghelou.jpg'}">
+            <span class="num">${String(i+1).padStart(2,'0')}</span>
+            <div class="cap"><b>${r.name}</b><span>${r.time||''} · ${r.tag||''}</span></div>
+          </div>`).join('')}
+      </div>
+      <div class="mag-quote"><p>${b.note||'按下快门，听见武汉的百年回响。这是一座值得用脚步慢慢丈量的城市，每一站都有故事在等着我。'}</p></div>
+    </div>
+    <div class="mag-footer">
+      <div class="loc">📍 武汉 · 一座英雄的城市</div>
+      <div class="mark">WUHAN MEMORY CAMERA<br>MADE WITH ♥ BY CELINE</div>
+    </div>
+  </div>`;
+}
+let _lastPoster=null;
+function downloadPoster(data){
+  const url=data||_lastPoster||(document.querySelector('#sheet-poster .poster-big img')||{}).src||(document.querySelector('#sheet-histposter .poster-big img')||{}).src;
+  if(!url){toast('请长按海报截图保存');return;}
+  try{const a=document.createElement('a');a.href=url;a.download='Celine的武汉路书.jpg';a.click();toast('海报已保存');}
+  catch(e){toast('长按图片保存即可');}
+}
+
+/* ==== 历史路书查看 ==== */
+function openHistPoster(i){
+  const b=histBooks[i];
+  const posterHTML=b.heroImg
+    ?`<div class="poster-big"><img src="${imgSrc(b.heroImg)}" style="width:100%;display:block"></div>`
+    :`<div class="poster-big dom-poster">${htmlPosterHTML(b)}</div>`;
+  _lastPoster=b.heroImg?imgSrc(b.heroImg):(b.poster||null);
+  document.getElementById('sheet-histposter').innerHTML=`
+    <div class="sheet-grab"></div><button class="sheet-close btn" onclick="closeOv('ov-histposter')">×</button>
+    <div style="padding:14px 20px 0;text-align:center"><div class="sec-kicker">MY ROADBOOK</div><div class="sec-title" style="font-size:22px">${b.title}</div><div class="sec-desc">${b.date} · ${b.count} 个足迹</div></div>
+    ${posterHTML}
+    <div class="save-bar"><button class="save-main btn" onclick="downloadHistPoster(${i})">${(b.poster||b.heroImg)?'⬇️ 保存到手机':'ℹ️ 本环境不支持导出'}</button><button class="save-sub btn" onclick="reuseBook(${i})">✏️ 用这个再编辑</button></div>`;
+  openOv('ov-histposter');
+}
+function reuseBook(i){
+  const b=histBooks[i];
+  book.title=b.title;book.selected=b.ids.slice();book.note=b.note||'';
+  saveState();closeOv('ov-histposter');openMaker();toast('已载入，可以继续编辑');
+}
+function downloadHistPoster(i){
+  const b=histBooks[i];
+  if(b.heroImg){
+    const url=imgSrc(b.heroImg);
+    const a=document.createElement('a');a.href=url;a.download='我的武汉之旅.jpg';a.click();
+    toast('海报已保存');return;
+  }
+  if(!b.poster){toast('电子版路书暂不支持导出，可截图保存');return;}
+  downloadPoster(b.poster);
+}
+function drawMiniPoster(c,b){
+  const x=c.getContext('2d');x.fillStyle='#EAF6FF';x.fillRect(0,0,132,156);
+  x.fillStyle='#4FACE8';x.font='bold 13px sans-serif';x.textAlign='center';x.fillText('武汉记忆路书',66,28);
+  x.fillStyle='#FF7A59';x.font='bold 10px sans-serif';x.fillText(b.title,66,48);
+  x.fillStyle='#94a3b8';x.font='8px sans-serif';x.fillText(b.date,66,62);
+}
+
+/* ==== Tab3 足迹地图 ==== */
+let curRoute=null;
+function renderRouteList(){
+  document.getElementById('routeList').innerHTML=ROUTES.map(r=>{
+    const done=r.spots.filter(s=>s.visited).length;
+    return `<div class="route-card" onclick="openRoute('${r.id}')" style="--rbg:#${r.rbg}">
+      <div class="route-ic">${r.icon}</div>
+      <div class="route-info"><h3>${r.name} <span class="cnt">${done}/${r.spots.length} 打卡</span></h3><p>${r.desc}</p></div>
+      <div class="route-go">›</div></div>`;
+  }).join('');
+}
+function openRoute(id){
+  const r=ROUTES.find(x=>x.id===id);curRoute=r;
+  document.getElementById('mapList').classList.add('hidden');
+  document.getElementById('mapDetail').classList.remove('hidden');
+  document.getElementById('routeTitle').textContent=r.name;
+  const pins=r.spots.map((s,i)=>{
+    const label=`<text y="26" text-anchor="middle" font-size="10" fill="#334155" font-weight="bold" paint-order="stroke" stroke="#eaddbe" stroke-width="3" stroke-linejoin="round">${s.name}</text>`;
+    if(s.visited){
+      // 已打卡：会发光的小旗子
+      return `<g onclick="openSpot(${i})" transform="translate(${s.x},${s.y})" style="cursor:pointer">
+        <circle r="15" fill="#FFC93C" opacity=".18"><animate attributeName="r" values="13;18;13" dur="2.2s" repeatCount="indefinite"/></circle>
+        <line x1="0" y1="11" x2="0" y2="-9" stroke="#334155" stroke-width="2.5" stroke-linecap="round"/>
+        <path d="M0 -9 L15 -5 L0 0 Z" fill="#FF7A59"><animate attributeName="opacity" values="1;.75;1" dur="1.8s" repeatCount="indefinite"/></path>
+        <circle cx="0" cy="12" r="3" fill="#FFC93C"/>
+        ${label}</g>`;
+    }
+    // 未打卡：飘着的问号气球
+    return `<g onclick="openSpot(${i})" transform="translate(${s.x},${s.y})" style="cursor:pointer">
+      <g><animateTransform attributeName="transform" type="translate" values="0 0;0 -4;0 0" dur="2.6s" repeatCount="indefinite"/>
+        <ellipse cx="0" cy="-3" rx="10" ry="12" fill="#FF8FB1" stroke="#fff" stroke-width="1.5"/>
+        <ellipse cx="-3" cy="-8" rx="3" ry="4" fill="rgba(255,255,255,.45)"/>
+        <text y="0" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">?</text>
+        <path d="M-2.5 9 L2.5 9 L0 12.5 Z" fill="#F2613D"/>
+        <path d="M0 12.5 q5 6 -2 12" stroke="#94a3b8" stroke-width="1.5" fill="none" stroke-dasharray="2.5 2.5"/>
+      </g>${label}</g>`;
+  }).join('');
+  const svg=document.getElementById('routeMapSvg');
+  svg.innerHTML=mapBaseSVG()+`<g>${pins}</g>`;
+  // 根据地标范围动态居中
+  const xs=r.spots.map(s=>s.x),ys=r.spots.map(s=>s.y);
+  let minX=Math.min(...xs)-62,maxX=Math.max(...xs)+62;
+  let minY=Math.min(...ys)-44,maxY=Math.max(...ys)+64;
+  let w=maxX-minX,h=maxY-minY;
+  const ar=396/370;
+  if(w/h<ar){const nw=h*ar,c=(minX+maxX)/2;minX=c-nw/2;maxX=c+nw/2;}
+  else{const nh=w/ar,c=(minY+maxY)/2;minY=c-nh/2;maxY=c+nh/2;}
+  svg.setAttribute('viewBox',minX.toFixed(0)+' '+minY.toFixed(0)+' '+(maxX-minX).toFixed(0)+' '+(maxY-minY).toFixed(0));
+  document.getElementById('routeSpots').innerHTML=r.spots.map((s,i)=>`
+    <div class="spot-row" onclick="openSpot(${i})">
+      <div class="spot-dot" style="background:${s.visited?'#FFF0EC':'#FFF6E7'}">${s.visited?'🚩':'🎈'}</div>
+      <div class="spot-info"><h4>${s.name}</h4><p>${s.desc}</p></div>
+      <div class="spot-status ${s.visited?'done':'todo'}">${s.visited?'🎉 已打卡':'✨ 欢迎你来'}</div>
+    </div>`).join('');
+}
+function closeRoute(){curRoute=null;document.getElementById('mapList').classList.remove('hidden');document.getElementById('mapDetail').classList.add('hidden');}
+function openSpot(i){
+  const r=curRoute,s=r.spots[i];
+  document.getElementById('sheet-spot').innerHTML=`
+    <div class="sheet-grab"></div><button class="sheet-close btn" onclick="closeOv('ov-spot')">×</button>
+    ${s.img?`<div class="detail-hero"><img src="${s.img}"><button class="back btn" onclick="closeOv('ov-spot')">←</button></div>`:''}
+    <div class="detail-body" style="${s.img?'':'margin-top:22px'}">
+      <div class="detail-title">${s.name}<span class="chip">${s.visited?'已打卡':'欢迎你来'}</span></div>
+      <div class="detail-meta">${r.name} · ${s.visited?'你已经来过这里啦':'还没去过，欢迎来探索'}</div>
+      <div class="tts-box"><div class="tts-top"><b>景点简介</b></div><div class="tts-text">${s.intro}</div></div>
+      ${s.visited?`<div class="kid-note">✓ 这里已经留下你的足迹，快去「记忆时间轴」看看当时的故事！</div>`:`<div class="kid-note">📍 还没去过？把它加入下一趟旅程，按下快门听听它的故事吧！</div>`}
+    </div>`;
+  openOv('ov-spot');
+}
+function mapBaseSVG(){
+  return `<defs><linearGradient id="riverg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#8fd8f0"/><stop offset="1" stop-color="#5AC8FA"/></linearGradient><pattern id="gridg" width="20" height="20" patternUnits="userSpaceOnUse"><path d="M20 0H0V20" fill="none" stroke="#cfe4f5" stroke-width=".6"/></pattern></defs>
+  <rect x="-350" y="-350" width="1100" height="1100" fill="#f0f8ff"/><rect x="-350" y="-350" width="1100" height="1100" fill="url(#gridg)"/>
+  <path d="M-350 235 C-100 205,120 270,200 250 S320 180,700 215 L700 255 C320 220,280 290,200 290 S-100 255,-350 280Z" fill="url(#riverg)" opacity=".75"/>
+  <path d="M120 -350 C130 80,80 140,100 240" fill="none" stroke="url(#riverg)" stroke-width="18" opacity=".8"/>
+  <text x="70" y="120" font-size="22" fill="#8ab4d8" font-weight="bold" opacity=".7">汉口</text>
+  <text x="70" y="215" font-size="22" fill="#8ab4d8" font-weight="bold" opacity=".7">汉阳</text>
+  <text x="270" y="150" font-size="22" fill="#8ab4d8" font-weight="bold" opacity=".7">武昌</text>
+  <text x="285" y="238" font-size="11" fill="#fff" font-weight="bold" transform="rotate(-8 285 238)">长江</text>`;
+}
+
+/* ==== 游记 ==== */
+function showTravel(){
+  const spots=book.selected.map(id=>{const r=findRec(id);return r?r.name:'';}).filter(Boolean).join('、');
+  document.getElementById('sheet-travel').innerHTML=`
+    <div class="sheet-grab"></div><button class="sheet-close btn" onclick="closeOv('ov-travel')">×</button>
+    <div style="padding:14px 0 4px;text-align:center"><div class="sec-kicker">AI WRITER</div><div class="sec-title" style="font-size:23px">✨ AI 一键成文</div></div>
+    <div class="travel-doc"><h3>${book.title}</h3>
+      <div class="byline">探索者：Celine · 2026.10.03-05 · 由 AI 根据勾选的地标生成</div>
+      <p class="para">这个周末，我带着武汉记忆相机走了三天，按快门的时候，每到一个地方相机就会讲出它的故事。${spots?`我去了${spots}，`:''}每一个地方都藏着惊喜。</p>
+      <p class="para">第一天认识了黄鹤楼、长江一桥这些经典地标，听了武汉关的钟声，还爬上龟山看了电视塔。第二天走武昌线，跟着鄂王岳飞的足迹——在司门口找到岳飞帅府遗址，在黄鹤楼岳飞广场念了《满江红》。第三天走汉阳线，逛翠微路、归元寺，找"翠微古井"，看冰塘角和邓甲村。原来这座城市藏着这么多英雄的故事！</p>
+      ${book.note?`<p class="para">${book.note}</p>`:''}
+      <div class="topics"><span>#武汉记忆相机</span><span>#Celine的武汉行</span><span>#岳飞足迹</span><span>#英雄城武汉</span><span>#周末去哪儿</span></div>
+    </div>
+    <div class="save-bar"><button class="save-main btn" onclick="copyTravel()">📋 复制游记文案</button><button class="save-sub btn" onclick="toast('已保存（演示）')">💾 保存</button></div>`;
+  openOv('ov-travel');
+}
+function copyTravel(){const txt=document.querySelector('.travel-doc').innerText;if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(()=>toast('游记已复制，去朋友圈种草吧！')).catch(()=>toast('复制成功'));else toast('已复制文案');}
+
+/* ==== 海报绘制 ==== */
+function drawPoster(c,o){
+  const ctx=c.getContext('2d'),W=c.width,H=c.height,cx=W/2;
+  // 背景
+  const g=ctx.createLinearGradient(0,0,0,H);g.addColorStop(0,'#EAF6FF');g.addColorStop(.5,'#F6FAFF');g.addColorStop(1,'#FFF4E8');
+  ctx.fillStyle=g;ctx.fillRect(0,0,W,H);
+  // 装饰圆
+  ctx.fillStyle='rgba(90,200,250,.15)';ctx.beginPath();ctx.arc(W-60,90,90,0,7);ctx.fill();
+  ctx.fillStyle='rgba(255,143,177,.15)';ctx.beginPath();ctx.arc(60,H-160,80,0,7);ctx.fill();
+  // 白卡
+  ctx.fillStyle='#fff';roundRect(ctx,34,34,W-68,H-68,32);ctx.fill();
+  ctx.textAlign='center';
+  ctx.fillStyle='#2E9BD4';ctx.font='bold 22px sans-serif';ctx.fillText('✈ WUHAN MEMORY CAMERA ✈',cx,100);
+  ctx.fillStyle='#FF7A59';ctx.font='bold 52px sans-serif';ctx.fillText(o.title,cx,180);
+  ctx.fillStyle='#94a3b8';ctx.font='20px sans-serif';ctx.fillText('探索者 Celine · 2026.10.03-05',cx,220);
+  // 地标照片拼贴（最多6张，2列）
+  const ids=o.ids.slice(0,6).map(id=>findRec(id)).filter(Boolean);
+  const cols=2,rows=Math.max(1,Math.ceil(ids.length/cols));
+  const draw=()=>{
+    ids.forEach((r,i)=>{
+      const col=i%cols,row=Math.floor(i/cols);
+      const pw=252,ph=118,gap=16;
+      const px=col===0?(cx-pw-gap/2):(cx+gap/2),py=260+row*136;
+      ctx.save();roundRect(ctx,px,py,pw,ph,16);ctx.clip();
+      if(r._img&&r._img.naturalWidth){
+        // cover
+        const ir=r._img.width/r._img.height,br=pw/ph;
+        let sw,sh,sx,sy;
+        if(ir>br){sh=r._img.height;sw=sh*br;sx=(r._img.width-sw)/2;sy=0;}
+        else{sw=r._img.width;sh=sw/br;sx=0;sy=(r._img.height-sh)/2;}
+        ctx.drawImage(r._img,sx,sy,sw,sh,px,py,pw,ph);
+      }else{ctx.fillStyle='#dbeafe';ctx.fillRect(px,py,pw,ph);}
+      ctx.restore();
+      ctx.fillStyle='rgba(0,0,0,.42)';roundRect(ctx,px,py+ph-30,pw,30,0);ctx.fill();
+      ctx.fillStyle='#fff';ctx.font='bold 16px sans-serif';ctx.textAlign='left';ctx.fillText(r.name,px+14,py+ph-9);
+      ctx.fillStyle='#fff';ctx.font='bold 13px sans-serif';ctx.textAlign='right';ctx.fillText(String(i+1).padStart(2,'0'),px+pw-14,py+ph-9);
+    });
+    ctx.textAlign='center';
+    // 便签
+    const ny=258+rows*136+14;
+    if(ny<H-150){
+      ctx.fillStyle='#FFF4DE';roundRect(ctx,60,ny,W-120,86,18);ctx.fill();
+      ctx.fillStyle='#8a6a3a';ctx.font='17px sans-serif';
+      const full=(o.note||'按下快门，听见武汉的百年回响，这是我最珍贵的旅行记忆！');
+      ctx.fillText(full.slice(0,20),cx,ny+36);ctx.fillText(full.slice(20,40)||'✨',cx,ny+62);
+    }
+    // 底部
+    ctx.fillStyle='#334155';ctx.font='bold 20px sans-serif';ctx.fillText('📍 武汉 · 一座英雄的城市',cx,H-70);
+    ctx.fillStyle='#94a3b8';ctx.font='14px sans-serif';ctx.fillText('MADE WITH ♥ BY WUHAN MEMORY CAMERA',cx,H-42);
+    // 印章
+    ctx.save();ctx.translate(W-100,104);ctx.rotate(-.12);
+    ctx.strokeStyle='#FF7A59';ctx.lineWidth=4;roundRect(ctx,-42,-42,84,84,10);ctx.stroke();
+    ctx.fillStyle='#FF7A59';ctx.font='bold 22px sans-serif';ctx.fillText('独家',0,-6);ctx.fillText('记忆',0,22);ctx.restore();
+    if(o.cb)o.cb();
+  };
+  let loaded=0,pending=ids.length;
+  if(!pending){draw();return;}
+  ids.forEach(r=>{
+    const im=new Image();r._img=im;
+    const done=()=>{if(++loaded===pending)draw();};
+    im.onload=done;im.onerror=done;im.src=r.img;
+  });
+}
+function roundRect(ctx,x,y,w,h,r){
+  ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);
+  ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();
+}
+
+/* ==== 通用 ==== */
+function enterMain(){document.getElementById('cover').classList.remove('on');document.getElementById('main').classList.add('on');}
+function switchTab(v){
+  document.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on',t.dataset.v===v));
+  document.querySelectorAll('.view').forEach(x=>x.classList.remove('on'));
+  document.getElementById('view-'+v).classList.add('on');
+  document.getElementById('viewport').scrollTop=0;stopSpeak();
+  if(v==='book')renderBookPage();
+}
+function openOv(id){document.getElementById(id).classList.add('on');}
+function closeOv(id){document.getElementById(id).classList.remove('on');if(id==='ov-detail')stopSpeak();}
+document.querySelectorAll('.overlay').forEach(o=>o.addEventListener('click',e=>{if(e.target===o){o.classList.remove('on');stopSpeak();}}));
+let toastTimer=null;
+function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('on');clearTimeout(toastTimer);toastTimer=setTimeout(()=>t.classList.remove('on'),2200);}
+
+/* ==== 预置历史路书（配置快照，点开时动态渲染海报） ==== */
+function seedHistory(){
+  // 老用户升级：若历史里没有用户海报且未升级过，则插入两张海报
+  if(histBooks.length && !localStorage.getItem('whm_poster_ver') && !histBooks.some(b=>b.heroImg)){
+    histBooks.unshift(
+      {title:'我的武汉之旅 · 人物版',date:'2026.10.03-05',count:4,photos:4,poster:null,thumb:null,heroImg:'my_poster_1.jpg',
+       ids:['d0-1','d0-3','d1-2','d0-4'],note:'从黄鹤楼的诗行，走到武汉关的钟声。'},
+      {title:'我的武汉之旅 · 风景版',date:'2026.10.03-05',count:4,photos:4,poster:null,thumb:null,heroImg:'my_poster_2.jpg',
+       ids:['d0-1','d0-3','d1-2','d0-4'],note:'长江穿城而过，风景在路上，也在心里。'}
+    );
+    localStorage.setItem('whm_poster_ver','1');
+    saveHist();
+    return;
+  }
+  if(histBooks.length)return; // 历史为空就补一份示例，避免因标记残留导致路书丢失
+  histBooks.unshift(
+    {title:'我的武汉之旅 · 人物版',date:'2026.10.03-05',count:4,photos:4,poster:null,thumb:null,heroImg:'my_poster_1.jpg',
+     ids:['d0-1','d0-3','d1-2','d0-4'],note:'从黄鹤楼的诗行，走到武汉关的钟声。'},
+    {title:'我的武汉之旅 · 风景版',date:'2026.10.03-05',count:4,photos:4,poster:null,thumb:null,heroImg:'my_poster_2.jpg',
+     ids:['d0-1','d0-3','d1-2','d0-4'],note:'长江穿城而过，风景在路上，也在心里。'},
+    {title:'Celine的武汉记忆之旅',date:'2026.10.03-05',count:6,photos:6,poster:null,thumb:null,
+     ids:['d0-1','d0-2','d0-3','d0-4','d1-2','d2-1'],
+     note:'三天，按下十几次快门，听了一路的故事。黄鹤楼的风、大桥的火车、古井的水声，都装进了这本小小的路书里。武汉，一座听见就会爱上的城市！'}
+  );
+  saveHist();
+}
+
+/* ==== 初始化 ==== */
+loadState();seedHistory();renderDayTabs();renderDayContent();renderRouteList();renderBookPage();
+</script>
+</body>
+</html>
